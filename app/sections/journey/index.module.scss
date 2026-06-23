@@ -1,0 +1,97 @@
+@use "../../global-styles/includes.scss" as *;
+
+.rootJourney {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background-color: $main-text-2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px;
+}
+
+.backgroundNumber {
+    position: absolute;
+
+    top: 50%;
+    right: -50px;
+
+    transform: translateY(-50%);
+
+    @include font(clamp(14rem, 30vw, 35rem), 800);
+
+    color: $main-bg-2;
+
+    pointer-events: none;
+}
+
+.content {
+    width: 100%;
+    max-width: 1400px;
+
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 100px;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    h2 {
+        @include font(clamp(3rem, 5vw, 7rem), 800);
+
+        color: $main-bg-2;
+
+        line-height: .9;
+
+        flex: 1;
+    }
+}
+
+.timeline {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+}
+
+.timelineItem {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    span {
+        @include font(clamp(1.4rem, 2vw, 2rem), 800);
+
+        color: $main-bg-2;
+    }
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background-color: $pale-yellow;
+
+    box-shadow:
+        0 0 20px rgba(255,240,131,.5),
+        0 0 60px rgba(255,240,131,.2);
+}

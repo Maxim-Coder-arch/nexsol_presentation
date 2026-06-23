@@ -1,0 +1,140 @@
+@use "../../global-styles/includes.scss" as *;
+
+.section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    background: $main-text-2;
+    color: $main-bg-2;
+    overflow: hidden;
+}
+
+.glow {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+
+    top: -250px;
+    right: -250px;
+
+    background: radial-gradient(
+        circle,
+        rgba(193, 32, 96, 0.18),
+        transparent 60%
+    );
+
+    filter: blur(50px);
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.header {
+    max-width: 900px;
+}
+
+.label {
+    @include font(14px, 700);
+    letter-spacing: 0.3em;
+    color: $burgundy;
+    margin-bottom: 20px;
+}
+
+.title {
+    @include font(64px, 700);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.text {
+    @include font(18px, 400);
+    color: $second-text;
+    line-height: 1.7;
+}
+
+.grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card {
+    width: 420px;
+    padding: 30px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    span {
+        @include font(14px, 700);
+        color: $pale-yellow;
+        letter-spacing: 0.2em;
+    }
+
+    b {
+        @include font(24px, 700);
+    }
+
+    p {
+        @include font(14px, 400);
+        color: $second-text;
+    }
+}
+
+.arrow {
+    font-size: 40px;
+    color: $second-text;
+    opacity: 0.5;
+}
+
+.backend {
+    display: flex;
+    justify-content: center;
+}
+
+.backendCard {
+    width: 100%;
+    max-width: 900px;
+
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.02);
+
+    span {
+        @include font(14px, 700);
+        color: $violet;
+        letter-spacing: 0.25em;
+    }
+
+    b {
+        display: block;
+        margin-top: 15px;
+
+        @include font(28px, 700);
+    }
+
+    p {
+        margin-top: 15px;
+
+        @include font(16px, 400);
+        color: $second-text;
+        line-height: 1.6;
+    }
+}
