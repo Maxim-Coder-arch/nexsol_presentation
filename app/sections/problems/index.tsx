@@ -3,74 +3,135 @@
 import { motion } from "framer-motion";
 import styles from "./index.module.scss";
 
+const problems = [
+  {
+    number: "01",
+    title: "Перегруженная CRM",
+    text: "Система постепенно превратилась в универсальный инструмент, решающий слишком большое количество задач одновременно."
+  },
+  {
+    number: "02",
+    title: "Масштабируемость",
+    text: "Некоторые архитектурные решения начали ограничивать дальнейшее развитие проекта."
+  },
+  {
+    number: "03",
+    title: "Типизация",
+    text: "В отдельных местах использовался тип any, что снижало надежность кодовой базы."
+  },
+  {
+    number: "04",
+    title: "Структура компонентов",
+    text: "Не существовало единого подхода к организации модулей и повторному использованию логики."
+  },
+  {
+    number: "05",
+    title: "SCSS",
+    text: "Использовались только глобальные стили без изоляции компонентов."
+  },
+  {
+    number: "06",
+    title: "Необходимость рефакторинга",
+    text: "Для дальнейшего роста потребовалась полная переработка архитектуры обеих систем."
+  }
+];
+
 const ProblemsSection = () => {
-    return (
-        <section className={styles.section} id="problems">
+  return (
+    <section className={styles.section}>
 
-            <div className={styles.glow} />
+      <motion.div
+        className={styles.blurOne}
+        animate={{
+          x: [0, 100, 0],
+          y: [0, -80, 0]
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
 
-            <div className={styles.container}>
+      <motion.div
+        className={styles.blurTwo}
+        animate={{
+          x: [0, -100, 0],
+          y: [0, 80, 0]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
 
-                <motion.div
-                    className={styles.header}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.9 }}
-                >
+      <h1 className={styles.backgroundTitle}>
+        ARCHITECTURE AUDIT
+      </h1>
 
-                    <span className={styles.label}>
-                        SYSTEM ANALYSIS
-                    </span>
+      <div className={styles.content}>
 
-                    <h2 className={styles.title}>
-                        Ограничения первой архитектуры
-                    </h2>
+        <motion.div
+          className={styles.left}
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className={styles.slide}>
+            05
+          </span>
 
-                    <p className={styles.text}>
-                        Первая версия системы показала ограничения масштабирования и слабую изоляцию модулей.
-                    </p>
+          <h2>
+            Анализ
+            <br />
+            первых версий
+          </h2>
 
-                </motion.div>
+          <p>
+            После завершения разработки был проведён
+            аудит архитектуры, структуры проекта и
+            перспектив дальнейшего развития систем.
+          </p>
+        </motion.div>
 
-                <motion.div
-                    className={styles.grid}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                >
+        <div className={styles.grid}>
+          {problems.map((item, index) => (
+            <motion.div
+              key={item.number}
+              className={styles.card}
+              initial={{
+                opacity: 0,
+                y: 80
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0
+              }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.08
+              }}
+              animate={{
+                y:
+                  index % 2 === 0
+                    ? [0, -10, 0]
+                    : [0, 10, 0]
+              }}
+            >
+              <span>{item.number}</span>
 
-                    <div className={styles.block}>
-                        <div className={styles.dot} />
-                        <span>Architecture</span>
-                        <b>Overloaded</b>
-                    </div>
+              <h3>{item.title}</h3>
 
-                    <div className={styles.block}>
-                        <div className={styles.dot} />
-                        <span>Components</span>
-                        <b>Coupled</b>
-                    </div>
+              <p>{item.text}</p>
+            </motion.div>
+          ))}
+        </div>
 
-                    <div className={styles.block}>
-                        <div className={styles.dot} />
-                        <span>Types</span>
-                        <b>Unsafe</b>
-                    </div>
+      </div>
 
-                    <div className={styles.block}>
-                        <div className={styles.dot} />
-                        <span>Styles</span>
-                        <b>Global scope</b>
-                    </div>
-
-                </motion.div>
-
-            </div>
-
-        </section>
-    );
+    </section>
+  );
 };
 
 export default ProblemsSection;

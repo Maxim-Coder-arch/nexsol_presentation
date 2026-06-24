@@ -5,23 +5,51 @@ import Image from "next/image";
 
 import styles from "./index.module.scss";
 
+const stats = [
+  {
+    value: "19",
+    title: "Компонентов"
+  },
+  {
+    value: "3",
+    title: "Страницы"
+  },
+  {
+    value: "5",
+    title: "API маршрутов"
+  },
+  {
+    value: "14",
+    title: "Дней разработки"
+  }
+];
+
+const features = [
+  "Формы заявок",
+  "Отзывы",
+  "Аналитика",
+  "MongoDB"
+];
+
 const FirstWebsiteSection = () => {
   return (
     <section className={styles.section}>
-      <div className={styles.backgroundText}>
-        NEXSOL 01
-      </div>
+      <div className={styles.blurOne} />
+      <div className={styles.blurTwo} />
+
+      <h1 className={styles.backgroundTitle}>
+        NEXSOL V1
+      </h1>
 
       <div className={styles.content}>
         <motion.div
           className={styles.left}
           initial={{ opacity: 0, x: -80 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <span className={styles.label}>
-            FIRST COMMERCIAL PROJECT
+          <span className={styles.slide}>
+            03
           </span>
 
           <h2>
@@ -31,64 +59,58 @@ const FirstWebsiteSection = () => {
           </h2>
 
           <p>
-            Первый полноценный коммерческий проект для компании
-            NEXSOL. Сайт был разработан для презентации услуг,
-            сбора заявок и формирования первого цифрового
-            присутствия компании.
+            Первый полноценный коммерческий проект,
+            созданный для компании NEXSOL.
           </p>
 
-          <div className={styles.tech}>
+          <p>
+            Помимо презентации услуг сайт включал
+            формы заявок, систему отзывов,
+            аналитику посещаемости, работу с
+            MongoDB и административные механизмы
+            обработки данных.
+          </p>
+
+          <div className={styles.stack}>
             <span>Next.js</span>
             <span>React</span>
-            <span>MongoDB</span>
             <span>TypeScript</span>
+            <span>MongoDB</span>
+            <span>SCSS</span>
+            <span>Framer Motion</span>
           </div>
         </motion.div>
 
         <motion.div
-          className={styles.right}
+          className={styles.preview}
           initial={{ opacity: 0, x: 80 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className={styles.mockup}>
-            <Image
-              src="/images/old-nexsol-site.png"
-              alt="Old NEXSOL"
-              fill
-            />
+          <Image
+            src="/images/old-nexsol-site.png"
+            alt=""
+            fill
+          />
+
+          <div className={styles.featureGrid}>
+            {features.map(item => (
+              <div key={item} className={styles.feature}>
+                {item}
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
 
-      <motion.div
-        className={styles.stats}
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        viewport={{ once: true }}
-      >
-        <div>
-          <h3>19</h3>
-          <span>COMPONENTS</span>
-        </div>
-
-        <div>
-          <h3>3</h3>
-          <span>PAGES</span>
-        </div>
-
-        <div>
-          <h3>5</h3>
-          <span>API</span>
-        </div>
-
-        <div>
-          <h3>14</h3>
-          <span>DAYS</span>
-        </div>
-      </motion.div>
+      <div className={styles.stats}>
+        {stats.map(item => (
+          <div key={item.title}>
+            <span>{item.value}</span>
+            <p>{item.title}</p>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };

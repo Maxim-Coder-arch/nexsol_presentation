@@ -5,54 +5,84 @@ import styles from "./index.module.scss";
 
 const HeroSection = () => {
   return (
-    <section id="hero-section" className={styles.hero}>
+    <section
+      id="hero-section"
+      className={styles.hero}
+    >
       <motion.div
         className={styles.hero__backgroundText}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        animate={{
+          y: [0, -20, 0]
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       >
-        <span>SOLID NEXUS</span>
-        <span>DIGITAL AGENCY</span>
+        <span>PORTFOLIO</span>
+        <span>PRESENTATION</span>
       </motion.div>
 
       <div className={styles.hero__gradient} />
+      <div className={styles.hero__gradientSecondary} />
+
+      <div className={styles.hero__number}>
+        00
+      </div>
 
       <div className={styles.hero__content}>
         <motion.p
           className={styles.hero__label}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: .8 }}
         >
-          PORTFOLIO PRESENTATION · 2026
+          ПОРТФОЛИО РАЗРАБОТЧИКА · 2026
         </motion.p>
 
         <motion.h1
-          initial={{ opacity: 0, y: 80, filter: "blur(20px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1.2 }}
+          initial={{
+            opacity: 0,
+            y: 80,
+            filter: "blur(20px)"
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)"
+          }}
+          transition={{
+            duration: 1.2
+          }}
         >
-          Эволюция
+          От идеи
           <br />
-          разработки
+          до архитектуры
         </motion.h1>
 
         <motion.h2
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{
+            opacity: 0,
+            y: 50
+          }}
+          animate={{
+            opacity: 1,
+            y: 0
+          }}
           transition={{
             duration: 1,
-            delay: 0.4
+            delay: .4
           }}
         >
-          От первых коммерческих проектов
-          <br />
-          до масштабируемых CRM-систем
+          Путь от первых коммерческих
+          веб-проектов до создания
+          масштабируемых CRM-систем
+          и бизнес-приложений
         </motion.h2>
 
         <motion.div
-          className={styles.hero__footer}
+          className={styles.hero__stats}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -61,13 +91,18 @@ const HeroSection = () => {
           }}
         >
           <div>
-            <span>Автор</span>
-            <p>Максим</p>
+            <span>4</span>
+            <p>Крупных проекта</p>
           </div>
 
           <div>
-            <span>Специализация</span>
-            <p>Frontend Developer</p>
+            <span>2</span>
+            <p>CRM-системы</p>
+          </div>
+
+          <div>
+            <span>2026</span>
+            <p>Год развития</p>
           </div>
         </motion.div>
       </div>
@@ -83,7 +118,7 @@ const HeroSection = () => {
           ease: "easeInOut"
         }}
       >
-        SCROLL
+        ↓
       </motion.div>
     </section>
   );

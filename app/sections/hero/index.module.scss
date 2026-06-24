@@ -2,21 +2,19 @@
 
 .hero {
   position: relative;
+
   min-height: 100vh;
+  width: 100%;
 
-  overflow: hidden;
-
-  background: $main-text-2;
+  // overflow: hidden;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  padding: 60px;
+  background: #050505;
 
-  @media screen and (max-width: $breakpoint-mobile) {
-    padding: 25px;
-  }
+  padding: 0 8%;
 
   &__gradient {
     position: absolute;
@@ -26,16 +24,40 @@
 
     border-radius: 50%;
 
-    background: radial-gradient(
-      circle,
-      rgba(255, 240, 131, 0.18) 0%,
-      rgba(255, 240, 131, 0) 70%
-    );
+    background:
+      radial-gradient(
+        circle,
+        rgba(255, 225, 120, .18),
+        transparent 70%
+      );
 
-    top: 50%;
     left: 50%;
+    top: 50%;
 
     transform: translate(-50%, -50%);
+
+    filter: blur(40px);
+  }
+
+  &__gradientSecondary {
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(130, 70, 255, .18),
+        transparent 70%
+      );
+
+    right: -150px;
+    top: -100px;
+
+    filter: blur(80px);
   }
 
   &__backgroundText {
@@ -50,108 +72,112 @@
     pointer-events: none;
 
     span {
-      @include font(clamp(5rem, 16vw, 18rem), 700);
+      @include font(clamp(6rem, 18vw, 20rem), 700);
 
-      line-height: 0.85;
-
-      color: rgba(255, 255, 255, 0.03);
+      color: rgba(255,255,255,.025);
 
       text-align: center;
 
-      white-space: nowrap;
+      line-height: .85;
 
-      user-select: none;
+      white-space: nowrap;
     }
+  }
+
+  &__number {
+    position: absolute;
+
+    right: -40px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    @include font(26rem,700);
+
+    color: rgba(255,255,255,.02);
+
+    user-select: none;
+    pointer-events: none;
   }
 
   &__content {
     position: relative;
-    z-index: 2;
 
-    max-width: 1400px;
+    z-index: 5;
 
     width: 100%;
+    max-width: 1500px;
   }
 
   &__label {
-    @include font(1.1rem, 700);
+    @include font(1rem,700);
 
     color: $pale-yellow;
 
     letter-spacing: 4px;
 
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
   }
 
   h1 {
-    @include font(clamp(5rem, 10vw, 10rem), 700);
+    @include font(clamp(6rem, 10vw, 11rem),700);
 
-    color: $main-bg-2;
+    color: white;
 
-    line-height: 0.9;
+    line-height: .85;
 
-    margin-bottom: 25px;
-
-    max-width: 900px;
-
-    @media screen and (max-width: $breakpoint-mobile) {
-      font-size: 4rem;
-    }
+    max-width: 1000px;
   }
 
   h2 {
-    @include font(clamp(1.2rem, 2vw, 2rem), 700);
-
-    color: $second-text;
-
-    line-height: 1.3;
+    margin-top: 2rem;
 
     max-width: 700px;
+
+    @include font(1.6rem,700);
+
+    color: rgba(255,255,255,.65);
+
+    line-height: 1.5;
   }
 
-  &__footer {
-    margin-top: 80px;
-
+  &__stats {
     display: flex;
-    gap: 80px;
+
+    gap: 5rem;
+
+    margin-top: 5rem;
 
     flex-wrap: wrap;
 
     div {
       display: flex;
       flex-direction: column;
-      gap: 5px;
     }
 
     span {
-      @include font(0.9rem, 700);
+      @include font(4rem,700);
 
-      color: $second-text;
-
-      letter-spacing: 2px;
+      color: white;
     }
 
     p {
-      @include font(1.5rem, 700);
+      @include font(1rem,700);
 
-      color: $main-bg-2;
+      color: rgba(255,255,255,.5);
     }
   }
 
   &__scroll {
     position: absolute;
 
-    bottom: 35px;
+    bottom: 2rem;
     left: 50%;
 
     transform: translateX(-50%);
 
-    @include font(1rem, 700);
+    @include font(2rem,700);
 
-    color: $pale-yellow;
-
-    letter-spacing: 4px;
-
-    z-index: 5;
+    color: rgba(255,255,255,.45);
   }
 }

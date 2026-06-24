@@ -1,97 +1,179 @@
 @use "../../global-styles/includes.scss" as *;
 
-.rootJourney {
-    position: relative;
+.section {
+  position: relative;
 
-    width: 100%;
-    height: 100vh;
+  min-height: 100vh;
+  width: 100%;
 
-    overflow: hidden;
 
-    background-color: $main-text-2;
+  background: #050505;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    padding: 60px;
+  padding: 0 6%;
 }
 
-.backgroundNumber {
-    position: absolute;
+.blurOne {
+  position: absolute;
 
-    top: 50%;
-    right: -50px;
+  width: 700px;
+  height: 700px;
 
-    transform: translateY(-50%);
+  border-radius: 50%;
 
-    @include font(clamp(14rem, 30vw, 35rem), 800);
+  background: $burgundy;
 
-    color: $main-bg-2;
+  filter: blur(220px);
 
-    pointer-events: none;
+  opacity: .18;
+
+  left: -250px;
+  top: -250px;
 }
 
-.content {
-    width: 100%;
-    max-width: 1400px;
+.blurTwo {
+  position: absolute;
 
-    position: relative;
-    z-index: 2;
+  width: 700px;
+  height: 700px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  border-radius: 50%;
 
-    gap: 100px;
+  background: $violet;
 
-    @media screen and (max-width: $breakpoint-tablet) {
-        flex-direction: column;
-        gap: 50px;
-    }
+  filter: blur(220px);
 
-    h2 {
-        @include font(clamp(3rem, 5vw, 7rem), 800);
+  opacity: .15;
 
-        color: $main-bg-2;
+  right: -250px;
+  bottom: -250px;
+}
 
-        line-height: .9;
+.backgroundTitle {
+  position: absolute;
 
-        flex: 1;
-    }
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  @include font(16rem,700);
+
+  color: rgba(255,255,255,.02);
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+
+  span {
+    @include font(1.3rem,700);
+
+    color: rgba(255,255,255,.4);
+  }
+
+  h2 {
+    margin-top: 1rem;
+
+    @include font(7rem,700);
+
+    line-height: .9;
+
+    color: white;
+  }
+
+  p {
+    margin-top: 2rem;
+
+    @include font(1.2rem,700);
+
+    line-height: 1.6;
+
+    color: rgba(255,255,255,.65);
+  }
 }
 
 .timeline {
-    flex: 1;
+  position: relative;
 
-    display: flex;
-    flex-direction: column;
+  margin-top: 7rem;
 
-    gap: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1.5rem;
+
+  z-index: 2;
 }
 
-.timelineItem {
-    display: flex;
-    align-items: center;
+.line {
+  position: absolute;
 
-    gap: 20px;
+  left: 0;
+  right: 0;
 
-    span {
-        @include font(clamp(1.4rem, 2vw, 2rem), 800);
+  top: 50%;
 
-        color: $main-bg-2;
-    }
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.2),
+      transparent
+    );
 }
 
-.dot {
-    width: 18px;
-    height: 18px;
+.card {
+  position: relative;
 
-    border-radius: 50%;
+  width: 260px;
 
-    background-color: $pale-yellow;
+  padding: 2rem;
 
-    box-shadow:
-        0 0 20px rgba(255,240,131,.5),
-        0 0 60px rgba(255,240,131,.2);
+  background: rgba(255,255,255,.04);
+
+  backdrop-filter: blur(30px);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 0 40px rgba(255,255,255,.03);
+
+  span {
+    @include font(1rem,700);
+
+    color: rgba(255,255,255,.4);
+  }
+
+  h3 {
+    margin-top: 1rem;
+
+    @include font(2rem,700);
+
+    color: white;
+  }
+
+  p {
+    margin-top: .8rem;
+
+    @include font(1rem,700);
+
+    line-height: 1.5;
+
+    color: rgba(255,255,255,.65);
+  }
 }

@@ -3,87 +3,137 @@
 import { motion } from "framer-motion";
 import styles from "./index.module.scss";
 
+const layers = [
+  {
+    title: "Пользовательский интерфейс",
+    description: "Независимые UI-компоненты"
+  },
+  {
+    title: "Бизнес-логика",
+    description: "Изоляция логики от интерфейса"
+  },
+  {
+    title: "API Layer",
+    description: "Работа с серверными маршрутами"
+  },
+  {
+    title: "MongoDB",
+    description: "Хранение данных системы"
+  },
+  {
+    title: "ASP.NET Core",
+    description: "Подготовка к выделенному backend"
+  }
+];
+
 const ArchitectureSection = () => {
-    return (
-        <section className={styles.section} id="architecture">
+  return (
+    <section className={styles.section}>
+      <motion.div
+        className={styles.blurOne}
+        animate={{
+          x: [0, 120, 0],
+          y: [0, -100, 0]
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
 
-            <div className={styles.glow} />
+      <motion.div
+        className={styles.blurTwo}
+        animate={{
+          x: [0, -120, 0],
+          y: [0, 120, 0]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
 
-            <div className={styles.container}>
+      <h1 className={styles.backgroundTitle}>
+        ARCHITECTURE
+      </h1>
 
-                <motion.div
-                    className={styles.header}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.9 }}
-                >
+      <div className={styles.content}>
+        <motion.div
+          className={styles.left}
+          initial={{
+            opacity: 0,
+            x: -80
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0
+          }}
+          viewport={{ once: true }}
+        >
+          <span className={styles.slide}>
+            06
+          </span>
 
-                    <span className={styles.label}>
-                        ARCHITECTURE SHIFT
-                    </span>
+          <h2>
+            НОВАЯ
+            <br />
+            АРХИТЕКТУРА
+          </h2>
 
-                    <h2 className={styles.title}>
-                        Мы структурировали систему
-                    </h2>
+          <p>
+            После анализа первых версий проектов
+            было принято решение полностью
+            пересмотреть архитектуру и создать
+            фундамент для дальнейшего развития
+            CRM-системы и корпоративного сайта.
+          </p>
 
-                    <p className={styles.text}>
-                        После анализа CRM V1 было принято решение полностью пересмотреть архитектуру,
-                        разделив логику, UI и инфраструктуру на независимые слои.
-                    </p>
-
-                </motion.div>
-
-                <motion.div
-                    className={styles.grid}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2 }}
-                >
-
-                    <div className={styles.card}>
-                        <span>CRM V1</span>
-                        <b>Monolith UI + Logic</b>
-                        <p>Смешанная структура компонентов</p>
-                    </div>
-
-                    <div className={styles.arrow}>
-                        →
-                    </div>
-
-                    <div className={styles.card}>
-                        <span>CRM V2</span>
-                        <b>Layered Architecture</b>
-                        <p>UI / Logic / API separation</p>
-                    </div>
-
-                </motion.div>
-
-                <motion.div
-                    className={styles.backend}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-
-                    <div className={styles.backendCard}>
-                        <span>Backend Evolution</span>
-
-                        <b>Next.js API → ASP.NET Core</b>
-
-                        <p>
-                            Готовность к вынесению сложной бизнес-логики в отдельный backend,
-                            единый для CRM и сайта.
-                        </p>
-                    </div>
-
-                </motion.div>
-
+          <div className={styles.metrics}>
+            <div>
+              <span>SCSS</span>
+              <p>→ CSS Modules</p>
             </div>
 
-        </section>
-    );
+            <div>
+              <span>any</span>
+              <p>→ Strict TS</p>
+            </div>
+
+            <div>
+              <span>Monolith</span>
+              <p>→ Layered</p>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className={styles.right}>
+          {layers.map((layer, index) => (
+            <motion.div
+              key={layer.title}
+              className={styles.card}
+              animate={{
+                y: [0, -12, 0]
+              }}
+              transition={{
+                duration: 4 + index,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <h3>{layer.title}</h3>
+              <p>{layer.description}</p>
+
+              {index !== layers.length - 1 && (
+                <div className={styles.line} />
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default ArchitectureSection;
