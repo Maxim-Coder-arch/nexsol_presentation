@@ -1,0 +1,207 @@
+@use "../../global-styles/includes.scss" as *;
+
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundDashboard {
+  position: absolute;
+  inset: 0;
+
+  img {
+    object-fit: cover;
+    filter: brightness(.18);
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.2),
+      rgba(0,0,0,.7)
+    );
+}
+
+.blurOne {
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background: $burgundy;
+
+  filter: blur(220px);
+
+  left: -100px;
+  top: -100px;
+
+  opacity: .35;
+}
+
+.blurTwo {
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  border-radius: 50%;
+
+  background: $violet;
+
+  filter: blur(220px);
+
+  right: -200px;
+  bottom: -200px;
+
+  opacity: .3;
+}
+
+.backgroundTitle {
+  position: absolute;
+
+  bottom: 2rem;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  @include font(10rem, 700);
+
+  color: rgba(255,255,255,.03);
+
+  white-space: nowrap;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 4rem;
+}
+
+.left {
+  max-width: 650px;
+
+  .slide {
+    @include font(1.5rem, 700);
+
+    color: rgba(255,255,255,.4);
+  }
+
+  h2 {
+    @include font(8rem, 700);
+
+    color: white;
+
+    line-height: .85;
+
+    margin-top: 1rem;
+  }
+
+  p {
+    margin-top: 2rem;
+
+    @include font(1.4rem, 700);
+
+    color: rgba(255,255,255,.7);
+
+    line-height: 1.5;
+  }
+}
+
+.metrics {
+  display: flex;
+  gap: 3rem;
+
+  margin-top: 3rem;
+
+  span {
+    @include font(3rem, 700);
+
+    color: white;
+  }
+
+  p {
+    margin-top: .5rem;
+
+    @include font(.9rem, 700);
+
+    color: rgba(255,255,255,.5);
+  }
+}
+
+.right {
+  display: grid;
+
+  grid-template-columns: repeat(2, 320px);
+
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(255,255,255,.05);
+
+  backdrop-filter: blur(30px);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 32px;
+
+  padding: 1.2rem;
+
+  box-shadow:
+    0 0 50px rgba(255,255,255,.03),
+    0 0 100px rgba(255,255,255,.02);
+
+  h3 {
+    margin-top: 1rem;
+
+    @include font(2rem, 700);
+
+    color: white;
+  }
+
+  p {
+    margin-top: .5rem;
+
+    @include font(1rem, 700);
+
+    color: rgba(255,255,255,.65);
+
+    line-height: 1.5;
+  }
+}
+
+.cardImage {
+  position: relative;
+
+  width: 100%;
+  height: 180px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  img {
+    object-fit: cover;
+  }
+}

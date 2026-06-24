@@ -1,0 +1,160 @@
+@use "../../global-styles/includes.scss" as *;
+
+.section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #060606;
+}
+
+.blurOne {
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  border-radius: 50%;
+
+  background: $burgundy;
+
+  filter: blur(220px);
+
+  opacity: .25;
+
+  left: -200px;
+  top: -200px;
+}
+
+.blurTwo {
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  border-radius: 50%;
+
+  background: $violet;
+
+  filter: blur(220px);
+
+  opacity: .18;
+
+  right: -200px;
+  bottom: -200px;
+}
+
+.backgroundTitle {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  @include font(13rem, 700);
+
+  color: rgba(255,255,255,.02);
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 5rem;
+}
+
+.left {
+  max-width: 520px;
+
+  .slide {
+    @include font(1.4rem, 700);
+
+    color: rgba(255,255,255,.45);
+  }
+
+  h2 {
+    margin-top: 1rem;
+
+    @include font(7rem, 700);
+
+    color: white;
+
+    line-height: .9;
+  }
+
+  p {
+    margin-top: 2rem;
+
+    @include font(1.3rem, 700);
+
+    color: rgba(255,255,255,.65);
+
+    line-height: 1.6;
+  }
+}
+
+.right {
+  width: 900px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 1.2rem;
+}
+
+.card {
+  min-width: 220px;
+  height: 110px;
+
+  padding: 0 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,.04);
+
+  backdrop-filter: blur(30px);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 0 40px rgba(255,255,255,.03);
+
+  @include font(1.8rem, 700);
+
+  color: white;
+
+  transition: .4s ease;
+
+  &:hover {
+    transform: translateY(-10px);
+
+    border-color: rgba(255,255,255,.18);
+
+    box-shadow:
+      0 0 50px rgba(255,255,255,.08),
+      0 0 100px rgba(255,255,255,.03);
+  }
+}

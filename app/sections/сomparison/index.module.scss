@@ -1,0 +1,183 @@
+@use "../../global-styles/includes.scss" as *;
+
+.comparison {
+  position: relative;
+  min-height: 100vh;
+
+  padding: 6rem;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #0b0b0b;
+}
+
+.bgWord {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  @include font(24rem, 700);
+
+  color: white;
+
+  opacity: 0.03;
+
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+.header {
+  text-align: center;
+  z-index: 2;
+
+  span {
+    @include font(1.1rem, 700);
+
+    color: rgba(255,255,255,.45);
+
+    letter-spacing: .4rem;
+  }
+
+  h2 {
+    @include font(6rem, 700);
+
+    color: white;
+
+    margin-top: 1rem;
+
+    span {
+      color: $pale-yellow;
+    }
+  }
+
+  p {
+    @include font(1.3rem, 700);
+
+    max-width: 900px;
+
+    margin: 1.5rem auto 0;
+
+    color: rgba(255,255,255,.55);
+  }
+}
+
+.projects {
+  margin-top: 4rem;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  gap: 3rem;
+
+  align-items: center;
+
+  z-index: 2;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sideTitle {
+  @include font(1.4rem, 700);
+
+  letter-spacing: .2rem;
+
+  color: rgba(255,255,255,.6);
+}
+
+.imageCard {
+  position: relative;
+
+  height: 260px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  img {
+    object-fit: cover;
+  }
+
+  &:first-of-type {
+    filter: grayscale(100%);
+    opacity: .75;
+  }
+}
+
+.side:last-child {
+  .imageCard {
+    filter: grayscale(0%);
+    opacity: 1;
+
+    box-shadow:
+      0 0 50px rgba(255,240,131,.12);
+  }
+}
+
+.middle {
+  @include font(8rem, 700);
+
+  color: $pale-yellow;
+}
+
+.stats {
+  margin-top: 4rem;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 1.5rem;
+
+  z-index: 2;
+}
+
+.stat {
+  padding: 2rem;
+
+  border-radius: 28px;
+
+  backdrop-filter: blur(30px);
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.numbers {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+
+  span {
+    @include font(2rem, 700);
+
+    color: white;
+
+    &:nth-child(2) {
+      color: $pale-yellow;
+    }
+  }
+}
+
+.stat p {
+  margin-top: .8rem;
+
+  @include font(1rem, 700);
+
+  color: rgba(255,255,255,.55);
+}

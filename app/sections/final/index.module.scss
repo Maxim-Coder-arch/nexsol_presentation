@@ -1,0 +1,172 @@
+@use "../../global-styles/includes.scss" as *;
+
+.section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #050505;
+}
+
+.blurOne {
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  border-radius: 50%;
+
+  background: $burgundy;
+
+  filter: blur(260px);
+
+  opacity: .22;
+
+  left: -300px;
+  top: -300px;
+}
+
+.blurTwo {
+  position: absolute;
+
+  width: 900px;
+  height: 900px;
+
+  border-radius: 50%;
+
+  background: $violet;
+
+  filter: blur(260px);
+
+  opacity: .15;
+
+  right: -300px;
+  bottom: -300px;
+}
+
+.backgroundTitle {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  @include font(12rem, 700);
+
+  color: rgba(255,255,255,.02);
+
+  white-space: nowrap;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+
+  width: 90%;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  max-width: 650px;
+
+  span {
+    @include font(1.5rem, 700);
+
+    color: rgba(255,255,255,.45);
+  }
+
+  h2 {
+    margin-top: 1rem;
+
+    @include font(8rem, 700);
+
+    color: white;
+
+    line-height: .9;
+  }
+
+  p {
+    margin-top: 2rem;
+
+    @include font(1.5rem, 700);
+
+    color: rgba(255,255,255,.65);
+
+    line-height: 1.5;
+  }
+}
+
+.right {
+  display: grid;
+
+  grid-template-columns: repeat(2, 260px);
+
+  gap: 2rem;
+}
+
+.stat {
+  background: rgba(255,255,255,.04);
+
+  backdrop-filter: blur(30px);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 30px;
+
+  padding: 2rem;
+
+  span {
+    @include font(5rem, 700);
+
+    color: white;
+  }
+
+  p {
+    margin-top: .5rem;
+
+    @include font(1rem, 700);
+
+    color: rgba(255,255,255,.5);
+  }
+}
+
+.links {
+  position: relative;
+  z-index: 3;
+
+  width: 90%;
+
+  margin: 5rem auto 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+
+  a {
+    @include font(4rem, 700);
+
+    color: rgba(255,255,255,.85);
+
+    transition: .4s ease;
+
+    &:hover {
+      transform: translateX(20px);
+
+      color: white;
+    }
+  }
+}
