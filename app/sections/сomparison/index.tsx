@@ -30,7 +30,7 @@ const improvements = [
 
 const ComparisonSection = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="comparision">
 
       <div className={styles.glow} />
 

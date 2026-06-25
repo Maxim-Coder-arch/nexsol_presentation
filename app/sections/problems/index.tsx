@@ -38,7 +38,7 @@ const problems = [
 
 const ProblemsSection = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="problems">
 
       <motion.div
         className={styles.blurOne}

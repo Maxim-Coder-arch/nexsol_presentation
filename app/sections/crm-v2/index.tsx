@@ -26,7 +26,7 @@ const modules = [
 
 const CrmV2Version = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="crm-v2">
 
       <div className={styles.blurOne}/>
       <div className={styles.blurTwo}/>

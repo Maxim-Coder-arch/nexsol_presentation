@@ -48,7 +48,7 @@ const technologies = [
 
 const TechnologyStack = () => {
   return (
-    <section className={styles.techStack}>
+    <section className={styles.techStack} id="tecnology-stack">
 
       <div className={styles.glowLeft} />
       <div className={styles.glowRight} />

@@ -1,3 +1,4 @@
+import Navigation from "./components/share/navigation";
 import ArchitectureSection from "./sections/architecture";
 import RealCaseSection from "./sections/case";
 import CrmV1Section from "./sections/crm-v1";
@@ -28,6 +29,7 @@ export default function Home() {
       <RealCaseSection />
       <TechnologyStack />
       <FinalSection />
+      <Navigation />
     </>
   );
 }

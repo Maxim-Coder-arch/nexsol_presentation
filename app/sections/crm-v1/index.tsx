@@ -10,7 +10,7 @@ import templates from "@/public/images/crm-templates.png";
 
 const CrmV1Section = () => {
     return (
-        <section className={styles.crmV1}>
+        <section className={styles.crmV1} id="crm-v1">
             <div className={styles.crmV1__container}>
                 <motion.div
                     className={styles.crmV1__header}

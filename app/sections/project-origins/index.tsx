@@ -21,7 +21,7 @@ const metrics = [
 
 const ProjectOrigins = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="project-origins">
       <div className={styles.blurOne} />
       <div className={styles.blurTwo} />
 

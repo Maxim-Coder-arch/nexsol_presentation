@@ -26,7 +26,7 @@ const features = [
 
 const NewCorporateSite = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="new-website">
       <motion.div
         className={styles.blurOne}
         animate={{

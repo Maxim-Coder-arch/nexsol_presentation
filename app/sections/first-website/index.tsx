@@ -33,7 +33,7 @@ const features = [
 
 const FirstWebsiteSection = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="first-website">
       <div className={styles.blurOne} />
       <div className={styles.blurTwo} />
 

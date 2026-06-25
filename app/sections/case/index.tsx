@@ -7,7 +7,7 @@ import styles from "./index.module.scss";
 
 const RealCaseSlide = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="case">
 
       <div className={styles.blurOne} />
       <div className={styles.blurTwo} />

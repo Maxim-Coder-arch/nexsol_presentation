@@ -33,7 +33,7 @@ const stages = [
 
 const JourneySection = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="journey">
       <div className={styles.blurOne} />
       <div className={styles.blurTwo} />
 

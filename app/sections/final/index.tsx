@@ -29,6 +29,12 @@ const resources = [
         description: "Интернет-магазин наградных розеток"
     },
     {
+        type: "START PROJECT",
+        title: "SoftByte Learn",
+        url: "soft-byte-learn.vercel.app/",
+        description: "Платформа, для бесплатного обучения программированию"
+    },
+    {
         type: "SOURCE CODE",
         title: "GitHub",
         url: "github.com/Maxim-Coder-arch",
@@ -38,7 +44,7 @@ const resources = [
 
 const FinalSection = () => {
     return (
-        <section className={styles.finalSection}>
+        <section className={styles.finalSection} id="final">
 
             <div className={styles.glowLeft} />
             <div className={styles.glowRight} />

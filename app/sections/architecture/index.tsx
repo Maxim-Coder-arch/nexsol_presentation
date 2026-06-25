@@ -28,7 +28,7 @@ const layers = [
 
 const ArchitectureSection = () => {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="architecture">
       <motion.div
         className={styles.blurOne}
         animate={{
