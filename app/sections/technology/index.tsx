@@ -4,96 +4,140 @@ import { motion } from "framer-motion";
 import styles from "./index.module.scss";
 
 const technologies = [
-  "NEXT.JS",
-  "REACT",
-  "TYPESCRIPT",
-  "MONGODB",
-  "SCSS",
-  "CSS MODULES",
-  "FRAMER MOTION",
-  "RECHARTS",
-  "ASP.NET CORE",
-  "POSTGRESQL"
+  {
+    title: "Next.js",
+    desc: "Fullstack React Framework",
+  },
+  {
+    title: "React",
+    desc: "Component Architecture",
+  },
+  {
+    title: "TypeScript",
+    desc: "Strict Type Safety",
+  },
+  {
+    title: "MongoDB",
+    desc: "Application Database",
+  },
+  {
+    title: "SCSS",
+    desc: "Flexible Styling",
+  },
+  {
+    title: "CSS Modules",
+    desc: "Style Isolation",
+  },
+  {
+    title: "Framer Motion",
+    desc: "Advanced Animations",
+  },
+  {
+    title: "Recharts",
+    desc: "Analytics & Charts",
+  },
+  {
+    title: "ASP.NET Core",
+    desc: "Backend Development",
+  },
+  {
+    title: "PostgreSQL",
+    desc: "Relational Database",
+  },
 ];
 
 const TechnologyStack = () => {
   return (
-    <section className={styles.section}>
-      <motion.div
-        className={styles.blurOne}
-        animate={{
-          x: [0, 120, 0],
-          y: [0, -80, 0]
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+    <section className={styles.techStack}>
 
-      <motion.div
-        className={styles.blurTwo}
-        animate={{
-          x: [0, -100, 0],
-          y: [0, 100, 0]
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      <div className={styles.glowLeft} />
+      <div className={styles.glowRight} />
 
-      <h1 className={styles.backgroundTitle}>
+      <div className={styles.backgroundText}>
         TECH STACK
-      </h1>
+      </div>
 
-      <div className={styles.content}>
+      <div className={styles.container}>
+
         <motion.div
-          className={styles.left}
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          className={styles.header}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 1 }}
         >
-          <span className={styles.slide}>11</span>
+          <span className={styles.label}>
+            11. TECHNOLOGIES
+          </span>
 
           <h2>
-            TECHNOLOGY
-            <br />
-            STACK
+            Технологии и инструменты разработки
           </h2>
 
           <p>
-            Современный стек технологий,
-            используемый при разработке
-            корпоративных сайтов,
-            CRM-систем и коммерческих
+            Современный стек технологий, используемый при создании
+            корпоративных сайтов, CRM-систем и коммерческих
             веб-приложений.
           </p>
         </motion.div>
 
-        <div className={styles.right}>
-          {technologies.map((tech, index) => (
+        <motion.div
+          className={styles.cards}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: .2 }}
+        >
+          {technologies.map((item, index) => (
             <motion.div
-              key={tech}
+              key={item.title}
               className={styles.card}
-              animate={{
-                y:
-                  index % 2 === 0
-                    ? [0, -12, 0]
-                    : [0, 12, 0]
+              initial={{
+                opacity: 0,
+                y: 40
               }}
+              whileInView={{
+                opacity: 1,
+                y: 0
+              }}
+              viewport={{ once: true }}
               transition={{
-                duration: 5 + index * .4,
-                repeat: Infinity,
-                ease: "easeInOut"
+                delay: index * 0.05
               }}
             >
-              {tech}
+              <div className={styles.cardIndex}>
+                {String(index + 1).padStart(2, "0")}
+              </div>
+
+              <h3>{item.title}</h3>
+
+              <p>{item.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        <motion.div
+          className={styles.footer}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div>
+            <strong>10+</strong>
+            <span>Технологий</span>
+          </div>
+
+          <div>
+            <strong>Fullstack</strong>
+            <span>Подход</span>
+          </div>
+
+          <div>
+            <strong>Modern</strong>
+            <span>Architecture</span>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

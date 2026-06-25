@@ -1,160 +1,614 @@
 @use "../../global-styles/includes.scss" as *;
 
-.section {
-  position: relative;
+.techStack {
+    position: relative;
+    // overflow: hidden;
 
-  width: 100%;
-  min-height: 100vh;
+    min-height: 85vh;
 
-  overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 100px 80px;
 
-  background: #060606;
+    background: #080808;
 }
 
-.blurOne {
-  position: absolute;
+.glowLeft {
+    position: absolute;
 
-  width: 700px;
-  height: 700px;
+    width: 700px;
+    height: 700px;
 
-  border-radius: 50%;
+    left: -250px;
+    top: -250px;
 
-  background: $burgundy;
+    border-radius: 50%;
 
-  filter: blur(220px);
+    background: rgba(255, 190, 70, .12);
 
-  opacity: .25;
-
-  left: -200px;
-  top: -200px;
+    filter: blur(180px);
 }
 
-.blurTwo {
-  position: absolute;
+.glowRight {
+    position: absolute;
 
-  width: 700px;
-  height: 700px;
+    width: 800px;
+    height: 800px;
 
-  border-radius: 50%;
+    right: -300px;
+    bottom: -300px;
 
-  background: $violet;
+    border-radius: 50%;
 
-  filter: blur(220px);
+    background: rgba(58, 111, 255, .10);
 
-  opacity: .18;
-
-  right: -200px;
-  bottom: -200px;
+    filter: blur(220px);
 }
 
-.backgroundTitle {
-  position: absolute;
+.backgroundText {
+    position: absolute;
 
-  left: 50%;
-  top: 50%;
+    left: 50%;
+    top: 50%;
 
-  transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
-  @include font(13rem, 700);
+    @include font(clamp(120px, 12vw, 260px), 700);
 
-  color: rgba(255,255,255,.02);
+    color: rgba(255,255,255,.025);
 
-  white-space: nowrap;
+    white-space: nowrap;
 
-  pointer-events: none;
+    pointer-events: none;
 }
 
-.content {
-  position: relative;
-  z-index: 3;
+.container {
+    position: relative;
+    z-index: 2;
 
-  width: 90%;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  gap: 5rem;
+    width: 100%;
+    max-width: 1700px;
 }
 
-.left {
-  max-width: 520px;
+.header {
+    text-align: center;
 
-  .slide {
-    @include font(1.4rem, 700);
+    max-width: 1000px;
+    margin: 0 auto 70px;
 
-    color: rgba(255,255,255,.45);
-  }
+    h2 {
+        @include font(
+            clamp(52px, 5vw, 90px),
+            700
+        );
 
-  h2 {
-    margin-top: 1rem;
+        line-height: .95;
 
-    @include font(7rem, 700);
+        color: white;
 
-    color: white;
+        margin-top: 18px;
+    }
 
-    line-height: .9;
-  }
+    p {
+        @include font(20px, 500);
 
-  p {
-    margin-top: 2rem;
+        color: rgba(255,255,255,.55);
 
-    @include font(1.3rem, 700);
+        max-width: 850px;
 
-    color: rgba(255,255,255,.65);
+        margin: 25px auto 0;
 
-    line-height: 1.6;
-  }
+        line-height: 1.7;
+    }
 }
 
-.right {
-  width: 900px;
+.label {
+    @include font(14px, 700);
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    letter-spacing: .35em;
 
-  gap: 1.2rem;
+    text-transform: uppercase;
+
+    color: #d7ab63;
+}
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 20px;
 }
 
 .card {
-  min-width: 220px;
-  height: 110px;
+    position: relative;
 
-  padding: 0 2rem;
+    min-height: 180px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    padding: 28px;
 
-  background: rgba(255,255,255,.04);
+    border-radius: 26px;
 
-  backdrop-filter: blur(30px);
+    background: rgba(255,255,255,.03);
 
-  border: 1px solid rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.06);
 
-  border-radius: 28px;
+    backdrop-filter: blur(30px);
 
-  box-shadow:
-    0 0 40px rgba(255,255,255,.03);
+    transition: .35s ease;
 
-  @include font(1.8rem, 700);
+    &:hover {
+        transform: translateY(-8px);
 
-  color: white;
+        border-color: rgba(215,171,99,.25);
 
-  transition: .4s ease;
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.4),
+            0 0 80px rgba(215,171,99,.08);
+    }
 
-  &:hover {
-    transform: translateY(-10px);
+    h3 {
+        @include font(28px, 700);
 
-    border-color: rgba(255,255,255,.18);
+        color: white;
 
-    box-shadow:
-      0 0 50px rgba(255,255,255,.08),
-      0 0 100px rgba(255,255,255,.03);
-  }
+        margin-top: 30px;
+    }
+
+    p {
+        @include font(15px, 500);
+
+        color: rgba(255,255,255,.5);
+
+        margin-top: 10px;
+
+        line-height: 1.6;
+    }
+}
+
+.cardIndex {
+    @include font(14px, 700);
+
+    color: rgba(215,171,99,.8);
+
+    letter-spacing: .15em;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+
+    margin-top: 70px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    strong {
+        @include font(42px, 700);
+
+        color: white;
+    }
+
+    span {
+        @include font(14px, 600);
+
+        color: rgba(255,255,255,.45);
+
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .techStack {
+        padding: 80px 60px;
+        min-height: auto;
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .card {
+        min-height: 160px;
+        padding: 24px;
+
+        h3 {
+            @include font(24px, 700);
+            margin-top: 24px;
+        }
+
+        p {
+            @include font(14px, 500);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .techStack {
+        padding: 60px 40px;
+    }
+
+    .glowLeft {
+        width: 500px;
+        height: 500px;
+        left: -150px;
+        top: -150px;
+        filter: blur(150px);
+    }
+
+    .glowRight {
+        width: 600px;
+        height: 600px;
+        right: -200px;
+        bottom: -200px;
+        filter: blur(180px);
+    }
+
+    .backgroundText {
+        @include font(clamp(80px, 10vw, 160px), 700);
+        opacity: 0.02;
+    }
+
+    .header {
+        margin-bottom: 50px;
+
+        h2 {
+            @include font(clamp(40px, 4.5vw, 60px), 700);
+        }
+
+        p {
+            @include font(17px, 500);
+        }
+    }
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+
+    .card {
+        min-height: 140px;
+        padding: 20px;
+        border-radius: 22px;
+
+        h3 {
+            @include font(20px, 700);
+            margin-top: 20px;
+        }
+
+        p {
+            @include font(13px, 500);
+        }
+    }
+
+    .cardIndex {
+        @include font(12px, 700);
+    }
+
+    .footer {
+        gap: 80px;
+        margin-top: 50px;
+
+        strong {
+            @include font(34px, 700);
+        }
+
+        span {
+            @include font(13px, 600);
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .techStack {
+        padding: 50px 30px;
+    }
+
+    .glowLeft {
+        width: 350px;
+        height: 350px;
+        left: -100px;
+        top: -100px;
+        filter: blur(120px);
+        opacity: 0.8;
+    }
+
+    .glowRight {
+        width: 400px;
+        height: 400px;
+        right: -120px;
+        bottom: -120px;
+        filter: blur(140px);
+        opacity: 0.7;
+    }
+
+    .backgroundText {
+        @include font(clamp(60px, 8vw, 100px), 700);
+        opacity: 0.015;
+        white-space: normal;
+    }
+
+    .header {
+        margin-bottom: 40px;
+
+        .label {
+            @include font(12px, 700);
+            letter-spacing: 0.25em;
+        }
+
+        h2 {
+            @include font(clamp(32px, 4vw, 44px), 700);
+            margin-top: 14px;
+        }
+
+        p {
+            @include font(15px, 500);
+            margin-top: 18px;
+            max-width: 100%;
+        }
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .card {
+        min-height: 120px;
+        padding: 18px;
+        border-radius: 18px;
+
+        &:hover {
+            transform: translateY(-4px);
+        }
+
+        h3 {
+            @include font(18px, 700);
+            margin-top: 16px;
+        }
+
+        p {
+            @include font(12px, 500);
+            margin-top: 6px;
+        }
+    }
+
+    .cardIndex {
+        @include font(11px, 700);
+    }
+
+    .footer {
+        gap: 50px;
+        margin-top: 40px;
+
+        strong {
+            @include font(28px, 700);
+        }
+
+        span {
+            @include font(12px, 600);
+            margin-top: 6px;
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .techStack {
+        padding: 40px 20px;
+    }
+
+    .glowLeft {
+        width: 250px;
+        height: 250px;
+        left: -60px;
+        top: -60px;
+        filter: blur(100px);
+        opacity: 0.6;
+    }
+
+    .glowRight {
+        width: 300px;
+        height: 300px;
+        right: -80px;
+        bottom: -80px;
+        filter: blur(120px);
+        opacity: 0.5;
+    }
+
+    .backgroundText {
+        @include font(clamp(40px, 6vw, 70px), 700);
+        opacity: 0.01;
+    }
+
+    .header {
+        margin-bottom: 30px;
+
+        .label {
+            @include font(10px, 700);
+            letter-spacing: 0.2em;
+        }
+
+        h2 {
+            @include font(clamp(26px, 3.5vw, 34px), 700);
+            margin-top: 10px;
+        }
+
+        p {
+            @include font(14px, 500);
+            margin-top: 14px;
+        }
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .card {
+        min-height: auto;
+        padding: 16px 18px;
+        border-radius: 16px;
+        backdrop-filter: blur(20px);
+
+        &:hover {
+            transform: none;
+            border-color: rgba(255,255,255,.06);
+            box-shadow: none;
+        }
+
+        h3 {
+            @include font(16px, 700);
+            margin-top: 12px;
+        }
+
+        p {
+            @include font(12px, 500);
+            margin-top: 4px;
+        }
+    }
+
+    .cardIndex {
+        @include font(10px, 700);
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 30px;
+
+        strong {
+            @include font(24px, 700);
+        }
+
+        span {
+            @include font(11px, 600);
+            margin-top: 4px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .techStack {
+        padding: 30px 16px;
+    }
+
+    .header {
+        margin-bottom: 25px;
+
+        h2 {
+            @include font(clamp(22px, 3vw, 28px), 700);
+        }
+
+        p {
+            @include font(13px, 500);
+        }
+    }
+
+    .cards {
+        gap: 8px;
+    }
+
+    .card {
+        padding: 14px 16px;
+        border-radius: 14px;
+
+        h3 {
+            @include font(15px, 700);
+            margin-top: 10px;
+        }
+
+        p {
+            @include font(11px, 500);
+        }
+    }
+
+    .footer {
+        gap: 20px;
+
+        strong {
+            @include font(20px, 700);
+        }
+
+        span {
+            @include font(10px, 600);
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .techStack {
+        padding: 24px 12px;
+    }
+
+    .header {
+        h2 {
+            @include font(clamp(18px, 2.5vw, 22px), 700);
+        }
+
+        p {
+            @include font(12px, 500);
+        }
+    }
+
+    .card {
+        padding: 12px 14px;
+        border-radius: 12px;
+
+        h3 {
+            @include font(13px, 700);
+            margin-top: 8px;
+        }
+
+        p {
+            @include font(10px, 500);
+        }
+    }
+
+    .cardIndex {
+        @include font(9px, 700);
+    }
+
+    .footer {
+        strong {
+            @include font(18px, 700);
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .glowLeft,
+    .glowRight {
+        filter: blur(150px);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .techStack {
+        background: #0a0a0a;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header,
+    .cards,
+    .footer,
+    .card {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .card {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
 }

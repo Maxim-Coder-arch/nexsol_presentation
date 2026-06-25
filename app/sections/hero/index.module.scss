@@ -180,4 +180,292 @@
 
     color: rgba(255,255,255,.45);
   }
+
+  // ========== АДАПТИВНОСТЬ ==========
+
+  // Планшеты и маленькие десктопы
+  @media (max-width: 1200px) {
+    padding: 0 5%;
+
+    &__gradient {
+      width: 600px;
+      height: 600px;
+    }
+
+    &__gradientSecondary {
+      width: 500px;
+      height: 500px;
+      right: -100px;
+      top: -50px;
+    }
+
+    &__number {
+      @include font(18rem,700);
+      right: -20px;
+    }
+
+    h1 {
+      max-width: 800px;
+    }
+
+    h2 {
+      max-width: 600px;
+      @include font(1.4rem,700);
+    }
+
+    &__stats {
+      gap: 3.5rem;
+
+      span {
+        @include font(3.2rem,700);
+      }
+    }
+  }
+
+  // Планшеты вертикальные и большие телефоны
+  @media (max-width: 992px) {
+    &__gradient {
+      width: 500px;
+      height: 500px;
+    }
+
+    &__gradientSecondary {
+      width: 400px;
+      height: 400px;
+      right: -80px;
+      top: -30px;
+      filter: blur(60px);
+    }
+
+    &__backgroundText {
+      span {
+        @include font(clamp(4rem, 14vw, 10rem), 700);
+      }
+    }
+
+    &__number {
+      @include font(12rem,700);
+      right: -10px;
+      opacity: 0.3;
+    }
+
+    h1 {
+      max-width: 600px;
+    }
+
+    h2 {
+      max-width: 500px;
+      @include font(1.2rem,700);
+      margin-top: 1.5rem;
+    }
+
+    &__stats {
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+
+      span {
+        @include font(2.8rem,700);
+      }
+
+      p {
+        @include font(0.9rem,700);
+      }
+    }
+  }
+
+  // Телефоны (пейзаж и большие)
+  @media (max-width: 768px) {
+    min-height: 100dvh; // динамическая высота для мобильных
+    padding: 0 6%;
+
+    &__gradient {
+      width: 400px;
+      height: 400px;
+      filter: blur(30px);
+    }
+
+    &__gradientSecondary {
+      width: 300px;
+      height: 300px;
+      right: -60px;
+      top: -20px;
+      filter: blur(50px);
+      opacity: 0.6;
+    }
+
+    &__backgroundText {
+      span {
+        @include font(clamp(3rem, 12vw, 6rem), 700);
+        white-space: normal; // переносим текст на мобилках
+        line-height: 1;
+      }
+    }
+
+    &__number {
+      @include font(8rem,700);
+      right: 0;
+      top: auto;
+      bottom: 20%;
+      transform: none;
+      opacity: 0.2;
+    }
+
+    &__content {
+      padding: 2rem 0;
+    }
+
+    &__label {
+      @include font(0.75rem,700);
+      letter-spacing: 3px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      @include font(clamp(3.5rem, 12vw, 5rem), 700);
+      max-width: 100%;
+    }
+
+    h2 {
+      max-width: 100%;
+      @include font(1rem,700);
+      margin-top: 1.2rem;
+    }
+
+    &__stats {
+      gap: 2rem;
+      margin-top: 2.5rem;
+
+      div {
+        min-width: 80px;
+      }
+
+      span {
+        @include font(2.2rem,700);
+      }
+
+      p {
+        @include font(0.8rem,700);
+      }
+    }
+
+    &__scroll {
+      bottom: 1.5rem;
+      @include font(1.5rem,700);
+    }
+  }
+
+  // Маленькие телефоны
+  @media (max-width: 480px) {
+    padding: 0 5%;
+    min-height: 100dvh;
+
+    &__gradient {
+      width: 300px;
+      height: 300px;
+      filter: blur(25px);
+    }
+
+    &__gradientSecondary {
+      width: 200px;
+      height: 200px;
+      right: -40px;
+      top: -10px;
+      filter: blur(40px);
+      opacity: 0.4;
+    }
+
+    &__backgroundText {
+      span {
+        @include font(clamp(2.5rem, 10vw, 4rem), 700);
+      }
+    }
+
+    &__number {
+      @include font(5rem,700);
+      bottom: 15%;
+      opacity: 0.15;
+    }
+
+    &__label {
+      @include font(0.65rem,700);
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      @include font(clamp(2.8rem, 10vw, 3.5rem), 700);
+    }
+
+    h2 {
+      @include font(0.85rem,700);
+      margin-top: 1rem;
+    }
+
+    &__stats {
+      gap: 1.5rem;
+      margin-top: 2rem;
+
+      div {
+        min-width: 60px;
+      }
+
+      span {
+        @include font(1.8rem,700);
+      }
+
+      p {
+        @include font(0.7rem,700);
+      }
+    }
+
+    &__scroll {
+      bottom: 1rem;
+      @include font(1.2rem,700);
+    }
+  }
+
+  @media (max-width: 360px) {
+    padding: 0 4%;
+
+    h1 {
+      @include font(clamp(2.2rem, 8vw, 2.8rem), 700);
+    }
+
+    &__stats {
+      gap: 1.2rem;
+
+      span {
+        @include font(1.5rem,700);
+      }
+
+      p {
+        @include font(0.65rem,700);
+      }
+    }
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    &__gradient,
+    &__gradientSecondary {
+      filter: blur(60px);
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    background: #0a0a0a;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &__backgroundText,
+    &__scroll {
+      animation: none !important;
+    }
+
+    &__label,
+    h1,
+    h2,
+    &__stats {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+  }
 }

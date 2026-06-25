@@ -2,64 +2,69 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+
 import styles from "./index.module.scss";
 
 const improvements = [
   {
-    before: "28",
-    after: "5",
-    title: "CRM Pages",
+    title: "Архитектура",
+    before: "Монолитная структура",
+    after: "Модульная система"
   },
   {
-    before: "50+",
-    after: "10",
-    title: "API Routes",
+    title: "Типизация",
+    before: "Использование any",
+    after: "Strict TypeScript"
   },
   {
-    before: "SCSS",
-    after: "CSS Modules",
-    title: "Styling",
+    title: "Стили",
+    before: "Глобальный SCSS",
+    after: "CSS Modules"
   },
   {
-    before: "any",
-    after: "Strict TS",
-    title: "Typing",
-  },
+    title: "Масштабирование",
+    before: "Ограниченное",
+    after: "Готово к развитию"
+  }
 ];
 
 const ComparisonSection = () => {
   return (
-    <section id="comparison" className={styles.comparison}>
-      <div className={styles.bgWord}>EVOLUTION</div>
+    <section className={styles.section}>
+
+      <div className={styles.glow} />
 
       <motion.div
         className={styles.header}
-        initial={{ opacity: 0, y: 80 }}
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <span>REFACTORING RESULT</span>
+        <span>РЕЗУЛЬТАТ РЕФАКТОРИНГА</span>
 
         <h2>
-          Было <span>→</span> Стало
+          Эволюция проектов
         </h2>
 
         <p>
-          Переход от первых рабочих решений к масштабируемой архитектуре,
-          ориентированной на долгосрочное развитие проекта.
+          Переход от первых рабочих решений к архитектуре,
+          рассчитанной на долгосрочное развитие и масштабирование.
         </p>
       </motion.div>
 
-      <div className={styles.projects}>
+      <div className={styles.timeline}>
+
         <motion.div
-          className={styles.side}
+          className={styles.version}
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <div className={styles.sideTitle}>OLD GENERATION</div>
+          <div className={styles.versionLabel}>
+            ПЕРВЫЕ ВЕРСИИ
+          </div>
 
-          <div className={styles.imageCard}>
+          <div className={styles.image}>
             <Image
               src="/images/old_site.png"
               alt=""
@@ -67,45 +72,51 @@ const ComparisonSection = () => {
             />
           </div>
 
-          <div className={styles.imageCard}>
-            <Image
-              src="/images/new_site.png"
-              alt=""
-              fill
-            />
-          </div>
-        </motion.div>
-
-        <motion.div
-          className={styles.middle}
-          animate={{
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-          }}
-        >
-          →
-        </motion.div>
-
-        <motion.div
-          className={styles.side}
-          initial={{ opacity: 0, x: 100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className={styles.sideTitle}>NEW GENERATION</div>
-
-          <div className={styles.imageCard}>
+          <div className={styles.image}>
             <Image
               src="/images/old_crm.png"
               alt=""
               fill
             />
           </div>
+        </motion.div>
 
-          <div className={styles.imageCard}>
+        <div className={styles.centerLine}>
+          <div className={styles.line} />
+
+          <motion.div
+            className={styles.arrow}
+            animate={{
+              y: [0, 15, 0]
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity
+            }}
+          >
+            ↓
+          </motion.div>
+        </div>
+
+        <motion.div
+          className={styles.version}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className={styles.versionLabel}>
+            НОВОЕ ПОКОЛЕНИЕ
+          </div>
+
+          <div className={styles.image}>
+            <Image
+              src="/images/new_site.png"
+              alt=""
+              fill
+            />
+          </div>
+
+          <div className={styles.image}>
             <Image
               src="/images/new_crm.png"
               alt=""
@@ -113,28 +124,34 @@ const ComparisonSection = () => {
             />
           </div>
         </motion.div>
+
       </div>
 
-      <div className={styles.stats}>
+      <div className={styles.improvements}>
         {improvements.map((item, index) => (
           <motion.div
             key={item.title}
-            className={styles.stat}
+            className={styles.card}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15 }}
             viewport={{ once: true }}
+            transition={{
+              delay: index * .15
+            }}
           >
-            <div className={styles.numbers}>
-              <span>{item.before}</span>
-              <span>→</span>
-              <span>{item.after}</span>
-            </div>
+            <span>{item.title}</span>
 
-            <p>{item.title}</p>
+            <div className={styles.compare}>
+              <p>{item.before}</p>
+
+              <div className={styles.separator} />
+
+              <b>{item.after}</b>
+            </div>
           </motion.div>
         ))}
       </div>
+
     </section>
   );
 };

@@ -212,3 +212,437 @@
     object-fit: contain;
   }
 }
+
+@media (max-width: 1400px) {
+  .content {
+    gap: 4rem;
+  }
+
+  .left {
+    max-width: 550px;
+
+    h2 {
+      @include font(5.5rem, 700);
+    }
+  }
+
+  .card {
+    width: 280px;
+    padding: 1.5rem;
+
+    h3 {
+      @include font(1.6rem, 700);
+    }
+  }
+
+  .logoCard {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 4rem 0;
+    min-height: auto;
+  }
+
+  .blurOne {
+    width: 500px;
+    height: 500px;
+    left: -150px;
+    top: -150px;
+    filter: blur(180px);
+  }
+
+  .blurTwo {
+    width: 500px;
+    height: 500px;
+    right: -150px;
+    bottom: -150px;
+    filter: blur(180px);
+  }
+
+  .backgroundTitle {
+    @include font(7rem, 700);
+    opacity: 0.025;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 4rem;
+    width: 95%;
+  }
+
+  .left {
+    max-width: 100%;
+    width: 100%;
+
+    h2 {
+      @include font(5rem, 700);
+    }
+
+    p {
+      max-width: 700px;
+    }
+  }
+
+  .right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: 300px;
+  }
+
+  .logoCard {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 992px) {
+  .blurOne {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+    top: -100px;
+    filter: blur(150px);
+    opacity: 0.15;
+  }
+
+  .blurTwo {
+    width: 400px;
+    height: 400px;
+    right: -100px;
+    bottom: -100px;
+    filter: blur(150px);
+    opacity: 0.12;
+  }
+
+  .backgroundTitle {
+    @include font(5rem, 700);
+    opacity: 0.02;
+  }
+
+  .left {
+    .slide {
+      @include font(1.1rem, 700);
+    }
+
+    h2 {
+      @include font(4rem, 700);
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      @include font(1rem, 700);
+      margin-top: 1.5rem;
+    }
+  }
+
+  .metrics {
+    gap: 2rem;
+    margin-top: 3rem;
+
+    span {
+      @include font(2.8rem, 700);
+    }
+
+    p {
+      @include font(0.85rem, 700);
+    }
+  }
+
+  .right {
+    gap: 1.5rem;
+  }
+
+  .roadmap {
+    gap: 1rem;
+  }
+
+  .card {
+    width: 260px;
+    padding: 1.3rem;
+    border-radius: 22px;
+
+    span {
+      @include font(0.8rem, 700);
+    }
+
+    h3 {
+      @include font(1.5rem, 700);
+      margin-top: 0.6rem;
+    }
+  }
+
+  .connector {
+    height: 40px;
+    margin-left: 18px;
+  }
+
+  .logoCard {
+    width: 180px;
+    height: 180px;
+    border-radius: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .blurOne {
+    width: 300px;
+    height: 300px;
+    left: -80px;
+    top: -80px;
+    filter: blur(120px);
+    opacity: 0.12;
+  }
+
+  .blurTwo {
+    width: 300px;
+    height: 300px;
+    right: -80px;
+    bottom: -80px;
+    filter: blur(120px);
+    opacity: 0.1;
+  }
+
+  .backgroundTitle {
+    @include font(3.5rem, 700);
+    opacity: 0.015;
+    white-space: normal;
+  }
+
+  .content {
+    gap: 3rem;
+  }
+
+  .left {
+    .slide {
+      @include font(0.9rem, 700);
+    }
+
+    h2 {
+      @include font(3rem, 700);
+    }
+
+    p {
+      @include font(0.9rem, 700);
+      margin-top: 1rem;
+    }
+  }
+
+  .metrics {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+
+    span {
+      @include font(2.2rem, 700);
+    }
+
+    p {
+      @include font(0.75rem, 700);
+    }
+  }
+
+  .right {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .roadmap {
+    flex-direction: row;
+    gap: 0.8rem;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    width: calc(50% - 0.4rem);
+    min-width: 140px;
+    padding: 1.2rem;
+    border-radius: 20px;
+
+    span {
+      @include font(0.7rem, 700);
+    }
+
+    h3 {
+      @include font(1.2rem, 700);
+      margin-top: 0.4rem;
+    }
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .logoCard {
+    width: 160px;
+    height: 160px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .blurOne {
+    width: 200px;
+    height: 200px;
+    left: -50px;
+    top: -50px;
+    filter: blur(100px);
+    opacity: 0.1;
+  }
+
+  .blurTwo {
+    width: 200px;
+    height: 200px;
+    right: -50px;
+    bottom: -50px;
+    filter: blur(100px);
+    opacity: 0.08;
+  }
+
+  .backgroundTitle {
+    @include font(2.5rem, 700);
+    opacity: 0.01;
+  }
+
+  .content {
+    gap: 2rem;
+    width: 92%;
+  }
+
+  .left {
+    .slide {
+      @include font(0.8rem, 700);
+    }
+
+    h2 {
+      @include font(2.2rem, 700);
+      margin-top: 0.5rem;
+    }
+
+    p {
+      @include font(0.8rem, 700);
+    }
+  }
+
+  .metrics {
+    gap: 1.2rem;
+    margin-top: 2rem;
+
+    span {
+      @include font(1.8rem, 700);
+    }
+
+    p {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .right {
+    gap: 1.5rem;
+  }
+
+  .roadmap {
+    gap: 0.6rem;
+  }
+
+  .card {
+    width: calc(50% - 0.3rem);
+    min-width: 110px;
+    padding: 0.8rem 1rem;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+
+    span {
+      @include font(0.6rem, 700);
+    }
+
+    h3 {
+      @include font(1rem, 700);
+      margin-top: 0.3rem;
+    }
+  }
+
+  .logoCard {
+    width: 130px;
+    height: 130px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .left {
+    h2 {
+      @include font(1.8rem, 700);
+    }
+
+    p {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .metrics {
+    gap: 1rem;
+
+    span {
+      @include font(1.5rem, 700);
+    }
+
+    p {
+      @include font(0.65rem, 700);
+    }
+  }
+
+  .card {
+    padding: 0.6rem 0.8rem;
+    border-radius: 14px;
+
+    h3 {
+      @include font(0.85rem, 700);
+    }
+  }
+
+  .logoCard {
+    width: 110px;
+    height: 110px;
+    border-radius: 16px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .blurOne,
+  .blurTwo {
+    filter: blur(180px);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .section {
+    background: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoCard {
+    animation: none !important;
+    transform: none !important;
+  }
+}

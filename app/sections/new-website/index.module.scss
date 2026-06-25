@@ -205,3 +205,467 @@
   bottom: 40px;
   right: 40px;
 }
+
+@media (max-width: 1400px) {
+  .preview {
+    width: 800px;
+    height: 500px;
+  }
+
+  .card {
+    min-width: 180px;
+    padding: 1rem 1.2rem;
+
+    strong {
+      @include font(1.2rem, 700);
+    }
+  }
+
+  .left {
+    max-width: 450px;
+
+    h2 {
+      @include font(5rem, 700);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 4rem 0;
+    min-height: auto;
+  }
+
+  .blurOne {
+    width: 500px;
+    height: 500px;
+    left: -150px;
+    top: -150px;
+    filter: blur(180px);
+  }
+
+  .blurTwo {
+    width: 500px;
+    height: 500px;
+    right: -150px;
+    bottom: -150px;
+    filter: blur(180px);
+  }
+
+  .backgroundTitle {
+    @include font(8rem, 700);
+    opacity: 0.025;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 4rem;
+    width: 90%;
+  }
+
+  .left {
+    max-width: 100%;
+    width: 100%;
+
+    h2 {
+      @include font(5rem, 700);
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      max-width: 700px;
+    }
+  }
+
+  .preview {
+    width: 100%;
+    height: 480px;
+  }
+}
+
+@media (max-width: 992px) {
+  .blurOne {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+    top: -100px;
+    filter: blur(150px);
+    opacity: 0.2;
+  }
+
+  .blurTwo {
+    width: 400px;
+    height: 400px;
+    right: -100px;
+    bottom: -100px;
+    filter: blur(150px);
+    opacity: 0.15;
+  }
+
+  .backgroundTitle {
+    @include font(5.5rem, 700);
+    opacity: 0.02;
+  }
+
+  .left {
+    .slide {
+      @include font(1.1rem, 700);
+    }
+
+    h2 {
+      @include font(4rem, 700);
+    }
+
+    p {
+      @include font(1rem, 700);
+      margin-top: 1.5rem;
+    }
+  }
+
+  .metric {
+    margin-top: 2.5rem;
+
+    span {
+      @include font(4rem, 700);
+    }
+
+    p {
+      @include font(0.9rem, 700);
+    }
+  }
+
+  .preview {
+    height: 400px;
+    border-radius: 30px;
+  }
+
+  .card {
+    min-width: 150px;
+    padding: 0.8rem 1rem;
+    border-radius: 18px;
+
+    span {
+      @include font(0.7rem, 700);
+    }
+
+    strong {
+      @include font(1rem, 700);
+      margin-top: 0.2rem;
+    }
+  }
+
+  .card1 {
+    top: 20px;
+    left: 20px;
+  }
+
+  .card2 {
+    top: 20px;
+    right: 20px;
+  }
+
+  .card3 {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .card4 {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .blurOne {
+    width: 300px;
+    height: 300px;
+    left: -80px;
+    top: -80px;
+    filter: blur(120px);
+    opacity: 0.18;
+  }
+
+  .blurTwo {
+    width: 300px;
+    height: 300px;
+    right: -80px;
+    bottom: -80px;
+    filter: blur(120px);
+    opacity: 0.14;
+  }
+
+  .backgroundTitle {
+    @include font(4rem, 700);
+    opacity: 0.015;
+    white-space: normal;
+  }
+
+  .content {
+    gap: 3rem;
+    width: 92%;
+  }
+
+  .left {
+    .slide {
+      @include font(0.9rem, 700);
+    }
+
+    h2 {
+      @include font(3rem, 700);
+      margin-top: 0.5rem;
+    }
+
+    p {
+      @include font(0.9rem, 700);
+      margin-top: 1.2rem;
+    }
+  }
+
+  .metric {
+    margin-top: 2rem;
+
+    span {
+      @include font(3rem, 700);
+    }
+
+    p {
+      @include font(0.8rem, 700);
+    }
+  }
+
+  .preview {
+    height: 320px;
+    border-radius: 24px;
+  }
+
+  .card {
+    min-width: 120px;
+    padding: 0.6rem 0.8rem;
+    border-radius: 14px;
+    backdrop-filter: blur(20px);
+
+    span {
+      @include font(0.6rem, 700);
+    }
+
+    strong {
+      @include font(0.85rem, 700);
+    }
+  }
+
+  .card1 {
+    top: 15px;
+    left: 15px;
+  }
+
+  .card2 {
+    top: 15px;
+    right: 15px;
+  }
+
+  .card3 {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  .card4 {
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .blurOne {
+    width: 200px;
+    height: 200px;
+    left: -50px;
+    top: -50px;
+    filter: blur(100px);
+    opacity: 0.15;
+  }
+
+  .blurTwo {
+    width: 200px;
+    height: 200px;
+    right: -50px;
+    bottom: -50px;
+    filter: blur(100px);
+    opacity: 0.12;
+  }
+
+  .backgroundTitle {
+    @include font(2.8rem, 700);
+    opacity: 0.01;
+  }
+
+  .content {
+    gap: 2rem;
+    width: 94%;
+  }
+
+  .left {
+    .slide {
+      @include font(0.8rem, 700);
+    }
+
+    h2 {
+      @include font(2.2rem, 700);
+    }
+
+    p {
+      @include font(0.8rem, 700);
+    }
+  }
+
+  .metric {
+    margin-top: 1.5rem;
+
+    span {
+      @include font(2.5rem, 700);
+    }
+
+    p {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .preview {
+    height: 260px;
+    border-radius: 20px;
+  }
+
+  .card {
+    min-width: 100px;
+    padding: 0.5rem 0.6rem;
+    border-radius: 12px;
+
+    span {
+      @include font(0.5rem, 700);
+    }
+
+    strong {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .card1 {
+    top: 10px;
+    left: 10px;
+  }
+
+  .card2 {
+    top: 10px;
+    right: 10px;
+  }
+
+  .card3 {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .card4 {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .left {
+    h2 {
+      @include font(1.8rem, 700);
+    }
+
+    p {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .metric {
+    span {
+      @include font(2rem, 700);
+    }
+
+    p {
+      @include font(0.65rem, 700);
+    }
+  }
+
+  .preview {
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .card {
+    min-width: 80px;
+    padding: 0.4rem 0.5rem;
+    border-radius: 10px;
+
+    span {
+      @include font(0.45rem, 700);
+    }
+
+    strong {
+      @include font(0.6rem, 700);
+    }
+  }
+
+  .card1 {
+    top: 8px;
+    left: 8px;
+  }
+
+  .card2 {
+    top: 8px;
+    right: 8px;
+  }
+
+  .card3 {
+    bottom: 8px;
+    left: 8px;
+  }
+
+  .card4 {
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .blurOne,
+  .blurTwo {
+    filter: blur(180px);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .section {
+    background: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blurOne,
+  .blurTwo {
+    animation: none !important;
+  }
+
+  .left,
+  .preview {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .card {
+    animation: none !important;
+  }
+}

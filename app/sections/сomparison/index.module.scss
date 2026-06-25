@@ -1,183 +1,683 @@
 @use "../../global-styles/includes.scss" as *;
 
-.comparison {
+.section {
   position: relative;
+
   min-height: 100vh;
 
-  padding: 6rem;
+  padding: 100px 7%;
 
-  overflow: hidden;
+  background: #060606;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background: #0b0b0b;
+  // overflow: hidden;
 }
 
-.bgWord {
+.glow {
   position: absolute;
 
-  top: 50%;
-  left: 50%;
+  width: 900px;
+  height: 900px;
 
-  transform: translate(-50%, -50%);
+  top: -300px;
+  left: -300px;
 
-  @include font(24rem, 700);
+  border-radius: 50%;
 
-  color: white;
+  background: $burgundy;
 
-  opacity: 0.03;
+  filter: blur(240px);
 
-  white-space: nowrap;
-
-  pointer-events: none;
+  opacity: .12;
 }
 
 .header {
-  text-align: center;
+  position: relative;
   z-index: 2;
 
+  text-align: center;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
   span {
-    @include font(1.1rem, 700);
+    @include font(1rem,700);
+
+    letter-spacing: .35rem;
 
     color: rgba(255,255,255,.45);
-
-    letter-spacing: .4rem;
   }
 
   h2 {
-    @include font(6rem, 700);
+    margin-top: 20px;
+
+    @include font(clamp(4rem,7vw,7rem),700);
 
     color: white;
-
-    margin-top: 1rem;
-
-    span {
-      color: $pale-yellow;
-    }
   }
 
   p {
-    @include font(1.3rem, 700);
+    margin-top: 25px;
 
-    max-width: 900px;
+    @include font(1.2rem,700);
 
-    margin: 1.5rem auto 0;
+    color: rgba(255,255,255,.6);
 
-    color: rgba(255,255,255,.55);
+    line-height: 1.7;
   }
 }
 
-.projects {
-  margin-top: 4rem;
+.timeline {
+  margin-top: 80px;
 
   display: grid;
 
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 140px 1fr;
 
-  gap: 3rem;
+  gap: 40px;
 
   align-items: center;
-
-  z-index: 2;
 }
 
-.side {
+.version {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+
+  gap: 25px;
 }
 
-.sideTitle {
-  @include font(1.4rem, 700);
+.versionLabel {
+  @include font(1rem,700);
 
-  letter-spacing: .2rem;
+  letter-spacing: .25rem;
 
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.5);
 }
 
-.imageCard {
+.image {
   position: relative;
 
-  height: 260px;
-
-  overflow: hidden;
+  height: 280px;
 
   border-radius: 28px;
 
+  overflow: hidden;
+
   border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.4);
 
   img {
     object-fit: cover;
   }
-
-  &:first-of-type {
-    filter: grayscale(100%);
-    opacity: .75;
-  }
 }
 
-.side:last-child {
-  .imageCard {
-    filter: grayscale(0%);
-    opacity: 1;
+.centerLine {
+  display: flex;
+  flex-direction: column;
 
-    box-shadow:
-      0 0 50px rgba(255,240,131,.12);
-  }
+  align-items: center;
 }
 
-.middle {
-  @include font(8rem, 700);
+.line {
+  width: 2px;
+  height: 420px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255,255,255,.3),
+      transparent
+    );
+}
+
+.arrow {
+  margin-top: 20px;
+
+  @include font(5rem,700);
 
   color: $pale-yellow;
 }
 
-.stats {
-  margin-top: 4rem;
+.improvements {
+  margin-top: 80px;
 
   display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
 
-  gap: 1.5rem;
-
-  z-index: 2;
+  gap: 20px;
 }
 
-.stat {
-  padding: 2rem;
+.card {
+  padding: 30px;
 
-  border-radius: 28px;
+  border-radius: 30px;
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px solid rgba(255,255,255,.08);
 
   backdrop-filter: blur(30px);
 
-  background: rgba(255,255,255,.04);
-
-  border: 1px solid rgba(255,255,255,.08);
-}
-
-.numbers {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-
   span {
-    @include font(2rem, 700);
+    @include font(1rem,700);
 
-    color: white;
-
-    &:nth-child(2) {
-      color: $pale-yellow;
-    }
+    color: rgba(255,255,255,.45);
   }
 }
 
-.stat p {
-  margin-top: .8rem;
+.compare {
+  margin-top: 20px;
 
-  @include font(1rem, 700);
+  p {
+    @include font(1rem,700);
 
-  color: rgba(255,255,255,.55);
+    color: rgba(255,255,255,.35);
+  }
+
+  b {
+    @include font(1.3rem,700);
+
+    color: white;
+  }
+}
+
+.separator {
+  width: 40px;
+  height: 2px;
+
+  margin: 15px 0;
+
+  background: $pale-yellow;
+}
+
+@media (max-width: 1400px) {
+  .section {
+    padding: 80px 5%;
+  }
+
+  .timeline {
+    grid-template-columns: 1fr 100px 1fr;
+    gap: 30px;
+  }
+
+  .image {
+    height: 240px;
+  }
+
+  .line {
+    height: 360px;
+  }
+
+  .improvements {
+    gap: 15px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 60px 4%;
+    min-height: auto;
+  }
+
+  .glow {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -200px;
+    filter: blur(180px);
+    opacity: 0.1;
+  }
+
+  .header {
+    span {
+      @include font(0.85rem, 700);
+      letter-spacing: 0.25rem;
+    }
+
+    h2 {
+      @include font(clamp(3rem, 5vw, 5rem), 700);
+    }
+
+    p {
+      @include font(1rem, 700);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .timeline {
+    margin-top: 60px;
+    grid-template-columns: 1fr 80px 1fr;
+    gap: 20px;
+  }
+
+  .version {
+    gap: 20px;
+  }
+
+  .versionLabel {
+    @include font(0.85rem, 700);
+    letter-spacing: 0.2rem;
+  }
+
+  .image {
+    height: 200px;
+    border-radius: 22px;
+  }
+
+  .line {
+    height: 300px;
+  }
+
+  .arrow {
+    @include font(4rem, 700);
+  }
+
+  .improvements {
+    margin-top: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .card {
+    padding: 25px;
+    border-radius: 24px;
+
+    span {
+      @include font(0.9rem, 700);
+    }
+  }
+
+  .compare {
+    margin-top: 15px;
+
+    p {
+      @include font(0.9rem, 700);
+    }
+
+    b {
+      @include font(1.1rem, 700);
+    }
+  }
+
+  .separator {
+    width: 30px;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 50px 4%;
+  }
+
+  .glow {
+    width: 500px;
+    height: 500px;
+    top: -150px;
+    left: -150px;
+    filter: blur(150px);
+  }
+
+  .header {
+    span {
+      @include font(0.75rem, 700);
+      letter-spacing: 0.2rem;
+    }
+
+    h2 {
+      @include font(clamp(2.5rem, 4.5vw, 4rem), 700);
+      margin-top: 15px;
+    }
+
+    p {
+      @include font(0.9rem, 700);
+      margin-top: 15px;
+    }
+  }
+
+  .timeline {
+    margin-top: 50px;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 15px;
+  }
+
+  .version {
+    gap: 15px;
+  }
+
+  .versionLabel {
+    @include font(0.75rem, 700);
+    letter-spacing: 0.15rem;
+  }
+
+  .image {
+    height: 160px;
+    border-radius: 18px;
+  }
+
+  .line {
+    height: 240px;
+  }
+
+  .arrow {
+    @include font(3rem, 700);
+    margin-top: 10px;
+  }
+
+  .improvements {
+    margin-top: 50px;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+
+    span {
+      @include font(0.8rem, 700);
+    }
+  }
+
+  .compare {
+    margin-top: 12px;
+
+    p {
+      @include font(0.8rem, 700);
+    }
+
+    b {
+      @include font(1rem, 700);
+    }
+  }
+
+  .separator {
+    width: 25px;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 40px 3%;
+  }
+
+  .glow {
+    width: 350px;
+    height: 350px;
+    top: -100px;
+    left: -100px;
+    filter: blur(120px);
+    opacity: 0.08;
+  }
+
+  .header {
+    span {
+      @include font(0.65rem, 700);
+      letter-spacing: 0.15rem;
+    }
+
+    h2 {
+      @include font(clamp(2rem, 4vw, 3rem), 700);
+      margin-top: 10px;
+    }
+
+    p {
+      @include font(0.85rem, 700);
+      margin-top: 12px;
+      max-width: 100%;
+    }
+  }
+
+  .timeline {
+    margin-top: 40px;
+    grid-template-columns: 1fr 40px 1fr;
+    gap: 12px;
+  }
+
+  .version {
+    gap: 12px;
+  }
+
+  .versionLabel {
+    @include font(0.65rem, 700);
+    letter-spacing: 0.1rem;
+  }
+
+  .image {
+    height: 120px;
+    border-radius: 14px;
+  }
+
+  .line {
+    height: 180px;
+  }
+
+  .arrow {
+    @include font(2.5rem, 700);
+    margin-top: 8px;
+  }
+
+  .improvements {
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card {
+    padding: 18px 20px;
+    border-radius: 18px;
+
+    span {
+      @include font(0.75rem, 700);
+    }
+  }
+
+  .compare {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    p {
+      @include font(0.8rem, 700);
+      margin: 0;
+    }
+
+    b {
+      @include font(0.9rem, 700);
+    }
+  }
+
+  .separator {
+    width: 20px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 30px 3%;
+  }
+
+  .glow {
+    width: 250px;
+    height: 250px;
+    top: -80px;
+    left: -80px;
+    filter: blur(100px);
+    opacity: 0.06;
+  }
+
+  .header {
+    span {
+      @include font(0.55rem, 700);
+      letter-spacing: 0.1rem;
+    }
+
+    h2 {
+      @include font(clamp(1.6rem, 3.5vw, 2.2rem), 700);
+    }
+
+    p {
+      @include font(0.75rem, 700);
+    }
+  }
+
+  .timeline {
+    margin-top: 30px;
+    grid-template-columns: 1fr 30px 1fr;
+    gap: 8px;
+  }
+
+  .version {
+    gap: 10px;
+  }
+
+  .versionLabel {
+    @include font(0.55rem, 700);
+    letter-spacing: 0.08rem;
+  }
+
+  .image {
+    height: 90px;
+    border-radius: 12px;
+  }
+
+  .line {
+    height: 140px;
+  }
+
+  .arrow {
+    @include font(2rem, 700);
+    margin-top: 5px;
+  }
+
+  .improvements {
+    margin-top: 30px;
+    gap: 8px;
+  }
+
+  .card {
+    padding: 14px 16px;
+    border-radius: 14px;
+
+    span {
+      @include font(0.65rem, 700);
+    }
+  }
+
+  .compare {
+    gap: 10px;
+
+    p {
+      @include font(0.7rem, 700);
+    }
+
+    b {
+      @include font(0.8rem, 700);
+    }
+  }
+
+  .separator {
+    width: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .section {
+    padding: 20px 2%;
+  }
+
+  .header {
+    h2 {
+      @include font(clamp(1.3rem, 3vw, 1.8rem), 700);
+    }
+
+    p {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .timeline {
+    grid-template-columns: 1fr 20px 1fr;
+    gap: 6px;
+  }
+
+  .versionLabel {
+    @include font(0.5rem, 700);
+  }
+
+  .image {
+    height: 70px;
+    border-radius: 10px;
+  }
+
+  .line {
+    height: 110px;
+  }
+
+  .arrow {
+    @include font(1.5rem, 700);
+  }
+
+  .card {
+    padding: 10px 12px;
+    border-radius: 12px;
+
+    span {
+      @include font(0.55rem, 700);
+    }
+  }
+
+  .compare {
+    p {
+      @include font(0.6rem, 700);
+    }
+
+    b {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .separator {
+    width: 12px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .glow {
+    filter: blur(180px);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .section {
+    background: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .version,
+  .card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .arrow {
+    animation: none !important;
+  }
 }

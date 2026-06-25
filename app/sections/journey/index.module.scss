@@ -177,3 +177,349 @@
     color: rgba(255,255,255,.65);
   }
 }
+
+@media (max-width: 1400px) {
+  .timeline {
+    gap: 1rem;
+  }
+
+  .card {
+    width: 220px;
+    padding: 1.5rem;
+
+    h3 {
+      @include font(1.6rem,700);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 4rem 5%;
+    min-height: auto;
+  }
+
+  .blurOne {
+    width: 500px;
+    height: 500px;
+    left: -150px;
+    top: -150px;
+    filter: blur(180px);
+  }
+
+  .blurTwo {
+    width: 500px;
+    height: 500px;
+    right: -150px;
+    bottom: -150px;
+    filter: blur(180px);
+  }
+
+  .backgroundTitle {
+    @include font(10rem,700);
+    opacity: 0.03;
+  }
+
+  .header {
+    max-width: 100%;
+
+    h2 {
+      @include font(5rem,700);
+    }
+
+    p {
+      max-width: 600px;
+    }
+  }
+
+  .timeline {
+    margin-top: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .line {
+    display: none;
+  }
+
+  .card {
+    width: calc(50% - 1rem);
+    min-width: 240px;
+    max-width: 320px;
+
+    h3 {
+      @include font(1.8rem,700);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 3rem 5%;
+  }
+
+  .blurOne {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+    top: -100px;
+    filter: blur(150px);
+    opacity: 0.15;
+  }
+
+  .blurTwo {
+    width: 400px;
+    height: 400px;
+    right: -100px;
+    bottom: -100px;
+    filter: blur(150px);
+    opacity: 0.12;
+  }
+
+  .backgroundTitle {
+    @include font(7rem,700);
+    opacity: 0.025;
+  }
+
+  .header {
+    span {
+      @include font(1rem,700);
+    }
+
+    h2 {
+      @include font(4rem,700);
+      margin-top: 0.5rem;
+    }
+
+    p {
+      @include font(1rem,700);
+      margin-top: 1.5rem;
+      max-width: 100%;
+    }
+  }
+
+  .timeline {
+    margin-top: 4rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: calc(50% - 0.75rem);
+    min-width: 200px;
+    padding: 1.5rem;
+    border-radius: 24px;
+
+    span {
+      @include font(0.85rem,700);
+    }
+
+    h3 {
+      @include font(1.5rem,700);
+      margin-top: 0.8rem;
+    }
+
+    p {
+      @include font(0.9rem,700);
+      margin-top: 0.6rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2.5rem 5%;
+    min-height: auto;
+  }
+
+  .blurOne {
+    width: 300px;
+    height: 300px;
+    left: -80px;
+    top: -80px;
+    filter: blur(120px);
+    opacity: 0.12;
+  }
+
+  .blurTwo {
+    width: 300px;
+    height: 300px;
+    right: -80px;
+    bottom: -80px;
+    filter: blur(120px);
+    opacity: 0.1;
+  }
+
+  .backgroundTitle {
+    @include font(5rem,700);
+    opacity: 0.02;
+    white-space: normal;
+  }
+
+  .header {
+    span {
+      @include font(0.85rem,700);
+    }
+
+    h2 {
+      @include font(3rem,700);
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      @include font(0.9rem,700);
+      margin-top: 1rem;
+    }
+  }
+
+  .timeline {
+    margin-top: 3rem;
+    gap: 1.2rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    min-width: unset;
+    padding: 1.2rem 1.5rem;
+    border-radius: 20px;
+
+    animation: none !important;
+
+    span {
+      @include font(0.8rem,700);
+    }
+
+    h3 {
+      @include font(1.3rem,700);
+      margin-top: 0.5rem;
+    }
+
+    p {
+      @include font(0.85rem,700);
+      margin-top: 0.4rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 4%;
+  }
+
+  .blurOne {
+    width: 200px;
+    height: 200px;
+    left: -50px;
+    top: -50px;
+    filter: blur(100px);
+    opacity: 0.1;
+  }
+
+  .blurTwo {
+    width: 200px;
+    height: 200px;
+    right: -50px;
+    bottom: -50px;
+    filter: blur(100px);
+    opacity: 0.08;
+  }
+
+  .backgroundTitle {
+    @include font(3.5rem,700);
+    opacity: 0.015;
+  }
+
+  .header {
+    span {
+      @include font(0.75rem,700);
+    }
+
+    h2 {
+      @include font(2.2rem,700);
+    }
+
+    p {
+      @include font(0.8rem,700);
+    }
+  }
+
+  .timeline {
+    margin-top: 2.5rem;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem 1.2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+
+    span {
+      @include font(0.7rem,700);
+    }
+
+    h3 {
+      @include font(1.1rem,700);
+    }
+
+    p {
+      @include font(0.75rem,700);
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .section {
+    padding: 1.5rem 3%;
+  }
+
+  .header {
+    h2 {
+      @include font(1.8rem,700);
+    }
+
+    p {
+      @include font(0.7rem,700);
+    }
+  }
+
+  .timeline {
+    margin-top: 2rem;
+    gap: 0.8rem;
+  }
+
+  .card {
+    padding: 0.8rem 1rem;
+    border-radius: 14px;
+
+    h3 {
+      @include font(0.95rem,700);
+    }
+
+    p {
+      @include font(0.7rem,700);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .blurOne,
+  .blurTwo {
+    filter: blur(180px);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .section {
+    background: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none !important;
+    transform: none !important;
+  }
+}

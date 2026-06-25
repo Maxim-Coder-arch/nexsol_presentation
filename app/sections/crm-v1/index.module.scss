@@ -231,7 +231,51 @@
   }
 }
 
+@media (max-width: 1400px) {
+  .crmV1 {
+    padding: 60px;
+  }
+
+  .left,
+  .right {
+    width: 400px;
+    height: 260px;
+  }
+
+  .center {
+    width: 700px;
+    height: 420px;
+  }
+
+  .crmV1__stats {
+    gap: 3.5rem;
+
+    strong {
+      @include font(3.5rem, 700);
+    }
+  }
+}
+
 @media (max-width: 1200px) {
+  .crmV1 {
+    padding: 50px;
+    min-height: auto;
+  }
+
+  .crmV1__header {
+    margin-bottom: 50px;
+
+    h2 {
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      @include font(1.1rem, 700);
+      max-width: 700px;
+    }
+  }
 
   .crmV1__showcase {
     height: auto;
@@ -257,10 +301,319 @@
     right: auto;
 
     opacity: 1;
+
+    transform: rotate(0deg) !important;
   }
 
   .crmV1__stats {
     flex-wrap: wrap;
     gap: 3rem;
+    margin-bottom: 4rem;
+
+    strong {
+      @include font(3.2rem, 700);
+    }
+
+    span {
+      @include font(0.9rem, 700);
+    }
+  }
+
+  .crmV1::before,
+  .crmV1::after {
+    width: 500px;
+    height: 500px;
+  }
+
+  .crmV1::before {
+    left: -150px;
+    top: -150px;
+    filter: blur(180px);
+  }
+
+  .crmV1::after {
+    right: -150px;
+    bottom: -150px;
+    filter: blur(200px);
+  }
+}
+
+@media (max-width: 992px) {
+  .crmV1 {
+    padding: 40px 30px;
+  }
+
+  .crmV1__header {
+    margin-bottom: 40px;
+
+    span {
+      @include font(0.9rem, 700);
+      letter-spacing: 0.3rem;
+    }
+
+    h2 {
+      @include font(clamp(3.5rem, 7vw, 5rem), 700);
+      margin-top: 1rem;
+    }
+
+    p {
+      @include font(1rem, 700);
+      margin-top: 1.5rem;
+      max-width: 600px;
+    }
+  }
+
+  .crmV1__stats {
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+
+    strong {
+      @include font(2.8rem, 700);
+    }
+
+    span {
+      @include font(0.8rem, 700);
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .card,
+  .left,
+  .center,
+  .right {
+    height: 320px;
+    border-radius: 26px;
+  }
+
+  .crmV1__showcase {
+    gap: 1.5rem;
+  }
+
+  .crmV1::before,
+  .crmV1::after {
+    width: 400px;
+    height: 400px;
+  }
+
+  .crmV1::before {
+    left: -100px;
+    top: -100px;
+    filter: blur(150px);
+    opacity: 0.15;
+  }
+
+  .crmV1::after {
+    right: -100px;
+    bottom: -100px;
+    filter: blur(160px);
+    opacity: 0.12;
+  }
+}
+
+@media (max-width: 768px) {
+  .crmV1 {
+    padding: 30px 20px;
+  }
+
+  .crmV1__header {
+    margin-bottom: 30px;
+
+    span {
+      @include font(0.8rem, 700);
+      letter-spacing: 0.2rem;
+    }
+
+    h2 {
+      @include font(clamp(2.5rem, 6vw, 3.5rem), 700);
+      margin-top: 0.8rem;
+    }
+
+    p {
+      @include font(0.9rem, 700);
+      margin-top: 1.2rem;
+      max-width: 100%;
+    }
+  }
+
+  .crmV1__stats {
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+
+    strong {
+      @include font(2.2rem, 700);
+    }
+
+    span {
+      @include font(0.7rem, 700);
+      letter-spacing: 0.08rem;
+    }
+  }
+
+  .card,
+  .left,
+  .center,
+  .right {
+    height: 250px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+  }
+
+  .crmV1__showcase {
+    gap: 1rem;
+  }
+
+  .crmV1::before,
+  .crmV1::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .crmV1::before {
+    left: -80px;
+    top: -80px;
+    filter: blur(120px);
+    opacity: 0.12;
+  }
+
+  .crmV1::after {
+    right: -80px;
+    bottom: -80px;
+    filter: blur(130px);
+    opacity: 0.1;
+  }
+}
+
+@media (max-width: 480px) {
+  .crmV1 {
+    padding: 20px 15px;
+  }
+
+  .crmV1__header {
+    margin-bottom: 25px;
+
+    span {
+      @include font(0.7rem, 700);
+      letter-spacing: 0.15rem;
+    }
+
+    h2 {
+      @include font(clamp(2rem, 5vw, 2.8rem), 700);
+      margin-top: 0.6rem;
+    }
+
+    p {
+      @include font(0.8rem, 700);
+      margin-top: 1rem;
+    }
+  }
+
+  .crmV1__stats {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    strong {
+      @include font(1.8rem, 700);
+    }
+
+    span {
+      @include font(0.65rem, 700);
+      letter-spacing: 0.05rem;
+    }
+  }
+
+  .card,
+  .left,
+  .center,
+  .right {
+    height: 200px;
+    border-radius: 16px;
+  }
+
+  .crmV1__showcase {
+    gap: 0.8rem;
+  }
+
+  .crmV1::before,
+  .crmV1::after {
+    width: 200px;
+    height: 200px;
+  }
+
+  .crmV1::before {
+    left: -50px;
+    top: -50px;
+    filter: blur(100px);
+    opacity: 0.1;
+  }
+
+  .crmV1::after {
+    right: -50px;
+    bottom: -50px;
+    filter: blur(110px);
+    opacity: 0.08;
+  }
+}
+
+@media (max-width: 360px) {
+  .crmV1 {
+    padding: 15px 10px;
+  }
+
+  .crmV1__header {
+    h2 {
+      @include font(clamp(1.6rem, 4vw, 2.2rem), 700);
+    }
+
+    p {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .crmV1__stats {
+    gap: 1rem;
+
+    strong {
+      @include font(1.5rem, 700);
+    }
+
+    span {
+      @include font(0.6rem, 700);
+    }
+  }
+
+  .card,
+  .left,
+  .center,
+  .right {
+    height: 160px;
+    border-radius: 14px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .crmV1::before,
+  .crmV1::after {
+    filter: blur(180px);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .crmV1 {
+    background: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crmV1__header,
+  .crmV1__stats,
+  .card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .left,
+  .right,
+  .center {
+    transform: rotate(0deg) !important;
   }
 }

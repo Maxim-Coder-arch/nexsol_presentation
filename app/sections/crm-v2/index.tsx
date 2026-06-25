@@ -2,155 +2,136 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 import styles from "./index.module.scss";
 
-const cards = [
+const modules = [
   {
-    title: "Analytics",
-    image: "/images/new-crm/nexsol_crm_v2_analytics.png",
-    description: "Отслеживание посещаемости и активности пользователей",
-    delay: 0
+    title: "Аналитика",
+    image: "/images/new-crm/nexsol_crm_v2_analytics.png"
   },
   {
-    title: "Leads",
-    image: "/images/new-crm/nexsol_crm_v2_leads.png",
-    description: "Управление заявками и клиентской базой",
-    delay: 1
+    title: "Заявки",
+    image: "/images/new-crm/nexsol_crm_v2_leads.png"
   },
   {
-    title: "Reviews",
-    image: "/images/new-crm/nexsol_crm_v2_reviews.png",
-    description: "Модерация отзывов",
-    delay: 2
+    title: "Отзывы",
+    image: "/images/new-crm/nexsol_crm_v2_reviews.png"
   },
   {
-    title: "Clients",
-    image: "/images/new-crm/nexsol_crm_v2_clients.png",
-    description: "Учет клиентов и стадий сотрудничества",
-    delay: 3
+    title: "Клиенты",
+    image: "/images/new-crm/nexsol_crm_v2_clients.png"
   }
 ];
 
 const CrmV2Version = () => {
   return (
     <section className={styles.section}>
-      <motion.div
-        className={styles.blurOne}
-        animate={{
-          x: [0, 120, 0],
-          y: [0, -80, 0]
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
 
-      <motion.div
-        className={styles.blurTwo}
-        animate={{
-          x: [0, -100, 0],
-          y: [0, 100, 0]
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      <div className={styles.blurOne}/>
+      <div className={styles.blurTwo}/>
 
-      <motion.div
-        className={styles.backgroundDashboard}
-        animate={{
-          scale: [1, 1.04, 1],
-          x: [0, 20, 0]
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-      </motion.div>
+      <h1 className={styles.backgroundTitle}>
+        CRM PLATFORM
+      </h1>
 
-      <div className={styles.overlay} />
+      <div className={styles.container}>
 
-      <div className={styles.content}>
         <motion.div
           className={styles.left}
-          initial={{ opacity: 0, x: -80 }}
+          initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <span className={styles.slide}>08</span>
+          <span className={styles.slide}>
+            СЛАЙД 08
+          </span>
 
           <h2>
-            CRM
+            Новая
             <br />
-            SYSTEM
+            CRM-система
           </h2>
 
           <p>
-            Новая версия CRM-системы создается
-            как масштабируемая платформа для
-            управления клиентами, аналитикой,
-            проектами и будущими AI-инструментами.
+            Полностью переработанная платформа,
+            ориентированная на масштабируемость,
+            расширяемость и долгосрочное развитие.
+            Новая архитектура позволяет внедрять
+            роли пользователей, управление проектами,
+            работу с файлами и AI-инструменты
+            без переработки существующей системы.
           </p>
 
           <div className={styles.metrics}>
+
             <div>
-              <span>28 → 5</span>
-              <p>Pages</p>
+              <strong>28 → 5</strong>
+              <span>страниц</span>
             </div>
 
             <div>
-              <span>50+ → 10</span>
-              <p>API Routes</p>
+              <strong>50+ → 10</strong>
+              <span>API маршрутов</span>
             </div>
 
             <div>
-              <span>∞</span>
-              <p>Scalability</p>
+              <strong>∞</strong>
+              <span>потенциал роста</span>
             </div>
+
           </div>
+
         </motion.div>
 
-        <div className={styles.right}>
-          {cards.map((card, index) => (
+        <motion.div
+          className={styles.right}
+          initial={{ opacity: 0, scale: .95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+        >
+
+          <div className={styles.mainDashboard}>
+
+            <Image
+              src="/images/new-crm/nexsol_crm_v2_analytics.png"
+              alt="CRM"
+              fill
+            />
+
+          </div>
+
+          {modules.map((module, index) => (
             <motion.div
-              key={card.title}
-              className={styles.card}
+              key={module.title}
+              className={`${styles.module} ${styles[`module${index}`]}`}
               animate={{
-                y:
-                  index % 2 === 0
-                    ? [0, -18, 0]
-                    : [0, 18, 0]
+                y: index % 2 === 0
+                  ? [0, -10, 0]
+                  : [0, 10, 0]
               }}
               transition={{
-                duration: 6 + index,
+                duration: 5 + index,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
             >
-              <div className={styles.cardImage}>
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                />
-              </div>
+              <Image
+                src={module.image}
+                alt={module.title}
+                fill
+              />
 
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
+              <div className={styles.moduleOverlay}>
+                {module.title}
+              </div>
             </motion.div>
           ))}
-        </div>
+
+        </motion.div>
+
       </div>
 
-      <h1 className={styles.backgroundTitle}>
-        THE FUTURE OF NEXSOL
-      </h1>
     </section>
   );
 };

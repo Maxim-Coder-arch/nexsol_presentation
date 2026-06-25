@@ -2,127 +2,115 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+
 import styles from "./index.module.scss";
 
 const RealCaseSlide = () => {
   return (
     <section className={styles.section}>
 
-      {/* background glow */}
-      <motion.div
-        className={styles.blurOne}
-        animate={{
-          x: [0, 80, 0],
-          y: [0, -60, 0]
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      <div className={styles.blurOne} />
+      <div className={styles.blurTwo} />
 
-      <motion.div
-        className={styles.blurTwo}
-        animate={{
-          x: [0, -90, 0],
-          y: [0, 70, 0]
-        }}
-        transition={{
-          duration: 22,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-
-      {/* background title */}
-      <div className={styles.backgroundTitle}>
-        REAL CASE STUDY
-      </div>
-
-      {/* header */}
       <motion.div
         className={styles.header}
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1 }}
       >
-        <span>10. REAL CASE</span>
-        <h2>Commercial Implementation</h2>
+        <span>10 · РЕАЛЬНЫЙ КОММЕРЧЕСКИЙ КЕЙС</span>
+
+        <h2>
+          Интернет-магазин
+          <br />
+          и CRM-система
+        </h2>
+
         <p>
-          Интернет-магазин наградных розеток и CRM-система,
-          разработанные как единая бизнес-экосистема.
+          Комплексное решение для управления заказами,
+          товарами, аналитикой и взаимодействием с клиентами.
         </p>
       </motion.div>
 
-      {/* main comparison */}
-      <div className={styles.comparison}>
+      <div className={styles.showcase}>
 
-        {/* LEFT - SITE */}
         <motion.div
-          className={styles.panel}
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
+          className={styles.website}
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
         >
-          <div className={styles.label}>WEB SITE</div>
+          <div className={styles.label}>
+            КЛИЕНТСКАЯ ЧАСТЬ
+          </div>
 
-          <div className={styles.imageBox}>
+          <div className={styles.image}>
             <Image
               src="/images/real_case_site.png"
-              alt="site"
+              alt=""
               fill
             />
           </div>
 
-          <p>Frontend / UX / Orders / Catalog</p>
+          <div className={styles.info}>
+            Каталог товаров • Поиск • Фильтрация • Заказы
+          </div>
         </motion.div>
 
-        {/* CENTER - IMPACT */}
         <motion.div
           className={styles.center}
-          initial={{ scale: 0.95 }}
-          animate={{ scale: [0.95, 1, 0.95] }}
-          transition={{ duration: 10, repeat: Infinity }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
         >
-          <h3>BUSINESS IMPACT</h3>
-
-          <div className={styles.metrics}>
-            <div>
-              <span>Full</span>
-              <p>Stack System</p>
-            </div>
-
-            <div>
-              <span>Real</span>
-              <p>Client Project</p>
-            </div>
-
-            <div>
-              <span>Live</span>
-              <p>Usage</p>
-            </div>
+          <div className={styles.circle}>
+            REAL
+            <br />
+            BUSINESS
           </div>
         </motion.div>
 
-        {/* RIGHT - CRM */}
         <motion.div
-          className={styles.panel}
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 9, repeat: Infinity }}
+          className={styles.crm}
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
         >
-          <div className={styles.label}>CRM SYSTEM</div>
+          <div className={styles.label}>
+            CRM СИСТЕМА
+          </div>
 
-          <div className={styles.imageBox}>
+          <div className={styles.imageLarge}>
             <Image
               src="/images/real_case_crm.png"
-              alt="crm"
+              alt=""
               fill
             />
           </div>
 
-          <p>Analytics / Leads / Admin / Control</p>
+          <div className={styles.info}>
+            Аналитика • Товары • Отзывы • Заявки • Клиенты
+          </div>
         </motion.div>
+
+      </div>
+
+      <div className={styles.bottomStats}>
+
+        <div>
+          <strong>1</strong>
+          <span>Экосистема</span>
+        </div>
+
+        <div>
+          <strong>2</strong>
+          <span>Связанных приложения</span>
+        </div>
+
+        <div>
+          <strong>100%</strong>
+          <span>Реальный бизнес</span>
+        </div>
 
       </div>
 

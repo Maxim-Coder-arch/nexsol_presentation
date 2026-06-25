@@ -3,115 +3,133 @@
 import { motion } from "framer-motion";
 import styles from "./index.module.scss";
 
-const stats = [
-  {
-    value: "4",
-    label: "Large Projects"
-  },
-  {
-    value: "2",
-    label: "Corporate Sites"
-  },
-  {
-    value: "2",
-    label: "CRM Systems"
-  },
-  {
-    value: "∞",
-    label: "Next Steps"
-  }
+const resources = [
+    {
+        type: "CRM SYSTEM V1",
+        title: "Nexsol CRM",
+        url: "nexsol-crm.vercel.app",
+        description: "Первая версия CRM-системы"
+    },
+    {
+        type: "CORPORATE WEBSITE",
+        title: "Nexsol Website",
+        url: "nexsol.ru",
+        description: "Корпоративный сайт компании"
+    },
+    {
+        type: "CORPORATE WEBSITE V2",
+        title: "Nexsol 2.0",
+        url: "nexsol-version-2.vercel.app",
+        description: "Новая архитектура и бизнес-логика"
+    },
+    {
+        type: "COMMERCIAL CASE",
+        title: "Rossets Store",
+        url: "test-rossets.vercel.app",
+        description: "Интернет-магазин наградных розеток"
+    },
+    {
+        type: "SOURCE CODE",
+        title: "GitHub",
+        url: "github.com/Maxim-Coder-arch",
+        description: "Исходный код проектов"
+    }
 ];
 
 const FinalSection = () => {
-  return (
-    <section className={styles.section}>
-      <motion.div
-        className={styles.blurOne}
-        animate={{
-          x: [0, 100, 0],
-          y: [0, -80, 0]
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+    return (
+        <section className={styles.finalSection}>
 
-      <motion.div
-        className={styles.blurTwo}
-        animate={{
-          x: [0, -120, 0],
-          y: [0, 120, 0]
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+            <div className={styles.glowLeft} />
+            <div className={styles.glowRight} />
 
-      <h1 className={styles.backgroundTitle}>
-        BUILDING THE FUTURE
-      </h1>
-
-      <div className={styles.content}>
-        <motion.div
-          className={styles.left}
-          initial={{ opacity: 0, x: -80 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-        >
-          <span>12</span>
-
-          <h2>
-            RESULTS
-            <br />
-            & FUTURE
-          </h2>
-
-          <p>
-            От первых полноценных веб-приложений
-            к проектированию масштабируемых
-            информационных систем.
-          </p>
-        </motion.div>
-
-        <div className={styles.right}>
-          {stats.map((item) => (
-            <div
-              key={item.label}
-              className={styles.stat}
-            >
-              <span>{item.value}</span>
-              <p>{item.label}</p>
+            <div className={styles.backgroundText}>
+                PROJECT ECOSYSTEM
             </div>
-          ))}
-        </div>
-      </div>
 
-      <motion.div
-        className={styles.links}
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <a
-          href="https://nexsol.ru"
-          target="_blank"
-        >
-          NEXSOL.RU
-        </a>
+            <div className={styles.container}>
 
-        <a
-          href="https://github.com/Maxim-Coder-arch"
-          target="_blank"
-        >
-          GITHUB.COM/MAXIM-CODER-ARCH
-        </a>
-      </motion.div>
-    </section>
-  );
+                <motion.div
+                    className={styles.header}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <span>
+                        12 · RESULTS
+                    </span>
+
+                    <h2>
+                        Итоги проекта
+                    </h2>
+
+                    <p>
+                        За время работы были разработаны корпоративные сайты,
+                        CRM-системы и коммерческие решения. Ниже представлены
+                        основные проекты и материалы для демонстрации результатов.
+                    </p>
+                </motion.div>
+
+                <motion.div
+                    className={styles.stats}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                >
+                    <div>
+                        <strong>4</strong>
+                        <span>Крупных проекта</span>
+                    </div>
+
+                    <div>
+                        <strong>2</strong>
+                        <span>Корпоративных сайта</span>
+                    </div>
+
+                    <div>
+                        <strong>2</strong>
+                        <span>CRM системы</span>
+                    </div>
+
+                    <div>
+                        <strong>∞</strong>
+                        <span>Потенциал развития</span>
+                    </div>
+                </motion.div>
+
+                <div className={styles.resources}>
+                    {resources.map((item, index) => (
+                        <motion.div
+                            key={item.url}
+                            className={styles.resourceCard}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                        >
+                            <span className={styles.type}>
+                                {item.type}
+                            </span>
+
+                            <h3>
+                                {item.title}
+                            </h3>
+
+                            <div className={styles.url}>
+                                {item.url}
+                            </div>
+
+                            <p>
+                                {item.description}
+                            </p>
+                        </motion.div>
+                    ))}
+                </div>
+
+            </div>
+
+        </section>
+    );
 };
 
 export default FinalSection;

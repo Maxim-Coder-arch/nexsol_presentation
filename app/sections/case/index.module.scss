@@ -2,141 +2,652 @@
 
 .section {
   position: relative;
-  width: 100%;
+
   min-height: 100vh;
 
-  overflow: hidden;
+  padding: 80px 7%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: #070707;
 
-  background: #141414; // 👈 темнее чем CRM V2
+  // overflow: hidden;
 }
 
 .blurOne {
   position: absolute;
-  width: 600px;
-  height: 600px;
+
+  width: 700px;
+  height: 700px;
+
   border-radius: 50%;
+
   background: $burgundy;
+
   filter: blur(240px);
-  left: -120px;
-  top: -120px;
-  opacity: .25;
+
+  left: -200px;
+  top: -200px;
+
+  opacity: .14;
 }
 
 .blurTwo {
   position: absolute;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: $violet;
-  filter: blur(260px);
-  right: -150px;
-  bottom: -150px;
-  opacity: .2;
-}
 
-.backgroundTitle {
-  position: absolute;
-  @include font(12rem, 700);
-  color: rgba(255,255,255,.02);
-  letter-spacing: 10px;
-  user-select: none;
+  width: 800px;
+  height: 800px;
+
+  border-radius: 50%;
+
+  background: $violet;
+
+  filter: blur(260px);
+
+  right: -250px;
+  bottom: -250px;
+
+  opacity: .12;
 }
 
 .header {
-  text-align: center;
+  position: relative;
   z-index: 2;
 
+  text-align: center;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
   span {
-    @include font(1.2rem, 700);
-    color: rgba(255,255,255,.4);
+    @include font(1rem,700);
+
+    letter-spacing: .3rem;
+
+    color: rgba(255,255,255,.45);
   }
 
   h2 {
-    @include font(5rem, 700);
+    margin-top: 20px;
+
+    @include font(clamp(4rem,7vw,7rem),700);
+
     color: white;
-    margin-top: 1rem;
+
+    line-height: .95;
   }
 
   p {
-    @include font(1.2rem, 700);
+    margin-top: 25px;
+
+    @include font(1.2rem,700);
+
     color: rgba(255,255,255,.6);
-    max-width: 700px;
-    margin-top: 1rem;
+
+    line-height: 1.7;
   }
 }
 
-.comparison {
-  margin-top: 4rem;
+.showcase {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1.2fr;
+
+  gap: 40px;
+
+  align-items: center;
+}
+
+.label {
+  margin-bottom: 15px;
+
+  @include font(.95rem,700);
+
+  letter-spacing: .2rem;
+
+  color: $pale-yellow;
+}
+
+.image,
+.imageLarge {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 32px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.5);
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.image {
+  height: 320px;
+}
+
+.imageLarge {
+  height: 500px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.circle {
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
 
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
 
-  width: 90%;
-  max-width: 1600px;
-}
+  text-align: center;
 
-.panel {
-  width: 420px;
+  @include font(1.4rem,700);
 
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
+  color: white;
 
-  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,.1);
+
+  background: rgba(255,255,255,.03);
+
   backdrop-filter: blur(30px);
 
-  padding: 1.5rem;
-
-  p {
-    margin-top: 1rem;
-    @include font(1rem, 700);
-    color: rgba(255,255,255,.6);
-  }
+  box-shadow:
+    0 0 80px rgba(255,240,131,.08);
 }
 
-.label {
-  @include font(1rem, 700);
-  color: $pale-yellow;
-  margin-bottom: 1rem;
+.info {
+  margin-top: 15px;
+
+  @include font(1rem,700);
+
+  color: rgba(255,255,255,.55);
 }
 
-.imageBox {
-  position: relative;
-  width: 100%;
-  height: 240px;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-.center {
-  text-align: center;
-  padding: 2rem;
-
-  h3 {
-    @include font(2rem, 700);
-    color: white;
-  }
-}
-
-.metrics {
-  margin-top: 2rem;
+.bottomStats {
+  margin-top: 60px;
 
   display: flex;
-  gap: 2rem;
+  justify-content: center;
 
-  span {
-    @include font(2rem, 700);
-    color: $pale-yellow;
+  gap: 100px;
+
+  text-align: center;
+
+  strong {
+    display: block;
+
+    @include font(4rem,700);
+
+    color: white;
   }
 
-  p {
-    @include font(0.9rem, 700);
+  span {
+    @include font(1rem,700);
+
     color: rgba(255,255,255,.5);
+  }
+}
+
+@media (max-width: 1400px) {
+  .section {
+    padding: 60px 5%;
+  }
+
+  .showcase {
+    gap: 30px;
+  }
+
+  .image {
+    height: 270px;
+  }
+
+  .imageLarge {
+    height: 420px;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+    @include font(1.2rem, 700);
+  }
+
+  .bottomStats {
+    gap: 60px;
+
+    strong {
+      @include font(3.5rem, 700);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 50px 4%;
+    min-height: auto;
+  }
+
+  .blurOne {
+    width: 500px;
+    height: 500px;
+    left: -150px;
+    top: -150px;
+    filter: blur(180px);
+  }
+
+  .blurTwo {
+    width: 600px;
+    height: 600px;
+    right: -150px;
+    bottom: -150px;
+    filter: blur(200px);
+  }
+
+  .header {
+    span {
+      @include font(0.85rem, 700);
+      letter-spacing: 0.2rem;
+    }
+
+    h2 {
+      @include font(clamp(3rem, 5vw, 5rem), 700);
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      @include font(1rem, 700);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .showcase {
+    margin-top: 50px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .website {
+    order: 1;
+  }
+
+  .center {
+    order: 2;
+  }
+
+  .crm {
+    order: 3;
+  }
+
+  .label {
+    @include font(0.8rem, 700);
+    letter-spacing: 0.15rem;
+  }
+
+  .image {
+    height: 280px;
+    border-radius: 24px;
+  }
+
+  .imageLarge {
+    height: 380px;
+    border-radius: 24px;
+  }
+
+  .circle {
+    width: 130px;
+    height: 130px;
+    @include font(1rem, 700);
+  }
+
+  .info {
+    @include font(0.85rem, 700);
+  }
+
+  .bottomStats {
+    margin-top: 50px;
+    gap: 50px;
+
+    strong {
+      @include font(3rem, 700);
+    }
+
+    span {
+      @include font(0.9rem, 700);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 40px 4%;
+  }
+
+  .blurOne {
+    width: 400px;
+    height: 400px;
+    left: -100px;
+    top: -100px;
+    filter: blur(150px);
+    opacity: 0.12;
+  }
+
+  .blurTwo {
+    width: 500px;
+    height: 500px;
+    right: -100px;
+    bottom: -100px;
+    filter: blur(160px);
+    opacity: 0.1;
+  }
+
+  .header {
+    span {
+      @include font(0.75rem, 700);
+      letter-spacing: 0.15rem;
+    }
+
+    h2 {
+      @include font(clamp(2.5rem, 4.5vw, 4rem), 700);
+      margin-top: 15px;
+    }
+
+    p {
+      @include font(0.9rem, 700);
+      margin-top: 15px;
+    }
+  }
+
+  .showcase {
+    gap: 25px;
+  }
+
+  .image {
+    height: 220px;
+    border-radius: 20px;
+  }
+
+  .imageLarge {
+    height: 320px;
+    border-radius: 20px;
+  }
+
+  .circle {
+    width: 110px;
+    height: 110px;
+    @include font(0.85rem, 700);
+  }
+
+  .bottomStats {
+    margin-top: 40px;
+    gap: 40px;
+
+    strong {
+      @include font(2.5rem, 700);
+    }
+
+    span {
+      @include font(0.8rem, 700);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 30px 3%;
+  }
+
+  .blurOne {
+    width: 300px;
+    height: 300px;
+    left: -80px;
+    top: -80px;
+    filter: blur(120px);
+    opacity: 0.1;
+  }
+
+  .blurTwo {
+    width: 350px;
+    height: 350px;
+    right: -80px;
+    bottom: -80px;
+    filter: blur(130px);
+    opacity: 0.08;
+  }
+
+  .header {
+    span {
+      @include font(0.65rem, 700);
+      letter-spacing: 0.1rem;
+    }
+
+    h2 {
+      @include font(clamp(2rem, 4vw, 3rem), 700);
+      margin-top: 10px;
+    }
+
+    p {
+      @include font(0.85rem, 700);
+      margin-top: 12px;
+      max-width: 100%;
+    }
+  }
+
+  .showcase {
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  .label {
+    @include font(0.7rem, 700);
+    margin-bottom: 10px;
+    letter-spacing: 0.1rem;
+  }
+
+  .image {
+    height: 180px;
+    border-radius: 16px;
+  }
+
+  .imageLarge {
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .circle {
+    width: 90px;
+    height: 90px;
+    @include font(0.7rem, 700);
+  }
+
+  .info {
+    @include font(0.75rem, 700);
+    margin-top: 10px;
+  }
+
+  .bottomStats {
+    margin-top: 35px;
+    gap: 30px;
+
+    strong {
+      @include font(2rem, 700);
+    }
+
+    span {
+      @include font(0.7rem, 700);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 25px 3%;
+  }
+
+  .blurOne {
+    width: 200px;
+    height: 200px;
+    left: -50px;
+    top: -50px;
+    filter: blur(100px);
+    opacity: 0.08;
+  }
+
+  .blurTwo {
+    width: 250px;
+    height: 250px;
+    right: -50px;
+    bottom: -50px;
+    filter: blur(110px);
+    opacity: 0.06;
+  }
+
+  .header {
+    span {
+      @include font(0.55rem, 700);
+      letter-spacing: 0.08rem;
+    }
+
+    h2 {
+      @include font(clamp(1.6rem, 3.5vw, 2.2rem), 700);
+    }
+
+    p {
+      @include font(0.75rem, 700);
+    }
+  }
+
+  .showcase {
+    margin-top: 30px;
+    gap: 16px;
+  }
+
+  .label {
+    @include font(0.6rem, 700);
+    margin-bottom: 8px;
+    letter-spacing: 0.08rem;
+  }
+
+  .image {
+    height: 140px;
+    border-radius: 14px;
+  }
+
+  .imageLarge {
+    height: 200px;
+    border-radius: 14px;
+  }
+
+  .circle {
+    width: 70px;
+    height: 70px;
+    @include font(0.55rem, 700);
+  }
+
+  .info {
+    @include font(0.65rem, 700);
+    margin-top: 8px;
+  }
+
+  .bottomStats {
+    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    strong {
+      @include font(1.8rem, 700);
+    }
+
+    span {
+      @include font(0.65rem, 700);
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .section {
+    padding: 20px 2%;
+  }
+
+  .header {
+    h2 {
+      @include font(clamp(1.3rem, 3vw, 1.8rem), 700);
+    }
+
+    p {
+      @include font(0.7rem, 700);
+    }
+  }
+
+  .showcase {
+    gap: 12px;
+  }
+
+  .image {
+    height: 110px;
+    border-radius: 12px;
+  }
+
+  .imageLarge {
+    height: 160px;
+    border-radius: 12px;
+  }
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    @include font(0.5rem, 700);
+  }
+
+  .info {
+    @include font(0.55rem, 700);
+  }
+
+  .bottomStats {
+    gap: 15px;
+
+    strong {
+      @include font(1.5rem, 700);
+    }
+
+    span {
+      @include font(0.6rem, 700);
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .blurOne,
+  .blurTwo {
+    filter: blur(180px);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .section {
+    background: #0a0a0a;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .website,
+  .center,
+  .crm {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
