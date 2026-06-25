@@ -38,7 +38,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: .8 }}
         >
-          ПОРТФОЛИО РАЗРАБОТЧИКА · 2026
+          NEXSOL ПРЕЗЕНТАЦИЯ · 2026
         </motion.p>
 
         <motion.h1
